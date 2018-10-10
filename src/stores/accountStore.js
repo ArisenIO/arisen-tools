@@ -98,7 +98,7 @@ export class AccountStore {
   }
 
   login = async () => {
-    let account = await RsnAgent.loginWithScatter()
+    let account = await RsnAgent.loginWithArkId()
 
     if (account) {
       this.account = account

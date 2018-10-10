@@ -46,15 +46,15 @@ const stores = {
   explorerStore
 }
 
-document.addEventListener('scatterLoaded', async scatterExtension => {
-  console.log('scatterloaded')
+document.addEventListener('arkidLoaded', async arkidExtension => {
+  console.log('arkidloaded')
 
-  if (window.scatter) {
-    RsnAgent.initScatter(window.scatter)
-    commonStore.initScatter(true)
+  if (window.arkid) {
+    RsnAgent.initArkId(window.arkid)
+    commonStore.initArkId(true)
 
-    if (window.scatter.identity) {
-      RsnAgent.initRsnAgent(window.scatter.identity)
+    if (window.arkid.identity) {
+      RsnAgent.initRsnAgent(window.arkid.identity)
       commonStore.initRsn(true)
       await accountStore.loadAccountInfo()
     }
@@ -64,7 +64,7 @@ document.addEventListener('scatterLoaded', async scatterExtension => {
 })
 
 setTimeout(() => {
-  if (!commonStore._initilizedScatter) {
+  if (!commonStore._initilizedArkId) {
     commonStore.setLoading(false)
     commonStore.initRsn(true)
   }

@@ -32,7 +32,7 @@ export class CommonStore {
     }
   }
 
-  scatterNeededAlert = () => {
+  arkidNeededAlert = () => {
     Swal({
       type: 'error',
       title: 'Oops...',
@@ -52,7 +52,7 @@ decorate(CommonStore, {
   initArkId: action,
   initRsn: action,
   getCoinMarketCap: action,
-  scatterNeededAlert: action
+  arkidNeededAlert: action
 })
 
 export default new CommonStore()

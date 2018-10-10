@@ -15,8 +15,8 @@ class LoginView extends Component {
   }
 
   loginClick = async () => {
-    if (!this.commonStore._initilizedScatter) {
-      this.commonStore.scatterNeededAlert()
+    if (!this.commonStore._initilizedArkId) {
+      this.commonStore.arkidNeededAlert()
     } else {
       this.commonStore.setLoading(true)
 

@@ -14,7 +14,7 @@ class RefundView extends Component {
     Swal({
       title: 'Claim Refund',
       text:
-        'Claim refund...\nScatter should appear shortly to confirm this action.\nYOUR TRANSACTION WILL BE SENT TO THE NETWORK AFTERWARDS',
+        'Claim refund...\nArisenID should appear shortly to confirm this action.\nYOUR TRANSACTION WILL BE SENT TO THE NETWORK AFTERWARDS',
       input: 'text',
       inputAttributes: {
         autocapitalize: 'off'

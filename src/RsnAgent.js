@@ -10,7 +10,7 @@ class RsnAgent {
       throw new Error('Cannot construct singleton')
     }
 
-    this.scatter = null
+    this.arkid = null
     this._initialized = false
     this.identity = null
     this.loginAccount = null
@@ -35,23 +35,23 @@ class RsnAgent {
     return this.loginAccount
   }
 
-  initScatter = scatter => {
-    this.scatter = scatter
+  initArkId = arkid => {
+    this.arkid = arkid
     this._initialized = true
   }
 
   initRsnAgent = id => {
     if (id) {
-      this.scatter.useIdentity(id)
-      console.log('Possible identity', this.scatter.identity)
-      const loginAccount = this.scatter.identity.accounts.find(
+      this.arkid.useIdentity(id)
+      console.log('Possible identity', this.arkid.identity)
+      const loginAccount = this.arkid.identity.accounts.find(
         acc => acc.blockchain === Values.NETWORK.blockchain
       )
 
       this.loginAccount = loginAccount
       this.identity = id
 
-      this.rsn = this.scatter.rsn(Values.NETWORK, Rsn, Values.CONFIG)
+      this.rsn = this.arkid.rsn(Values.NETWORK, Rsn, Values.CONFIG)
 
       return this.loginAccount
     }
@@ -244,22 +244,22 @@ class RsnAgent {
     return { name: 'test', authority: 'active' }
   }
 
-  loginWithScatter = async () => {
-    if (!this.scatter) {
+  loginWithArkId = async () => {
+    if (!this.arkid) {
       return
     }
 
-    let id = await this.scatter.getIdentity(Values.requiredFields)
+    let id = await this.arkid.getIdentity(Values.requiredFields)
 
     return this.initRsnAgent(id)
   }
 
   logout = async () => {
-    if (!this.scatter) {
+    if (!this.arkid) {
       return
     }
 
-    let res = await this.scatter.forgetIdentity()
+    let res = await this.arkid.forgetIdentity()
 
     this._initialized = false
     this.identity = null
