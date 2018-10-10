@@ -2,25 +2,25 @@ import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { FormattedMessage } from 'react-intl'
 
-@inject('eosioStore')
+@inject('arisenStore')
 @observer
 class BpListView extends Component {
   constructor(props) {
     super(props)
-    const { eosioStore } = this.props
-    this.eosioStore = eosioStore
+    const { arisenStore } = this.props
+    this.arisenStore = arisenStore
   }
 
   componentDidMount = async () => {
-    await this.eosioStore.getGlobalInfo()
-    this.eosioStore.getBlockProducers()
+    await this.arisenStore.getGlobalInfo()
+    this.arisenStore.getBlockProducers()
   }
 
   render() {
     let bpList = []
 
-    if (this.eosioStore.blockProducers) {
-      bpList = this.eosioStore.blockProducers.slice(0, 30)
+    if (this.arisenStore.blockProducers) {
+      bpList = this.arisenStore.blockProducers.slice(0, 30)
     }
 
     return (

@@ -1,5 +1,5 @@
 export default {
-  Eosuite: '이오슈트',
+  ArisenTools: '이오슈트',
   Login: '로그인',
   Logout: '로그아웃',
   'Irreversible Blocks': '변경불가 블록',
@@ -39,7 +39,7 @@ export default {
   '성공!': '성공!',
   '트랜젹신이 블록체인으로 전송되었습니다.': '트랜젹신이 블록체인으로 전송되었습니다.',
   'Block Explorer': '블록 익스플로러',
-  'EOS Block Explorer': '이오스 블록 익스플로러',
+  'RSN Block Explorer': '이오스 블록 익스플로러',
   'Search with account, public key, transaction id, block number':
     '계정, 공개키, 트랜잭션 ID, 블록 번호로 검색하세요',
   'No Seasrch Results': '검색 결과가 없습니다',
@@ -53,14 +53,14 @@ export default {
   'Simulate values you want to undelegate and click confirm.':
     '자원을 설정하고 확인버튼을 누르세요.',
   Confirm: '확인',
-  'EOS Available': 'EOS 이용 가능량',
+  'RSN Available': 'RSN 이용 가능량',
   'RAM Available': 'RAM 이용 가능량',
   'CPU Available': 'CPU 이용 가능량',
   'NET Available': 'NET 이용 가능량',
   Usaged: '사용중',
   Staked: '스테이크중',
   Error: '오류',
-  'Insufficient available EOS balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network.':
+  'Insufficient available RSN balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network.':
     '한도 초과입니다. 또는 값이 0이 될수 업습니다. 그렇게 되면 트랜잭션 수행이 차단될 것입니다.',
   Actions: '액션',
   ID: '번호',
@@ -102,7 +102,7 @@ export default {
   'Unregister as proxy voter': '투표대리인 등록을 취소합니다.',
   'Register as proxy voter': '투표대리인으로 등록합니다.',
   'Claim Refund': '환불 요청',
-  'By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract.':
+  'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.':
     '이오스 헌법에 동의하며 환불을 요청합니다.',
   'Unstaked amount': '언스테이크된 금액',
   Claim: '요청',
@@ -169,8 +169,8 @@ export default {
   'Article XIX - Counterparts': 'Article XIX - Counterparts',
   'This Constitution may be executed in any number of counterparts, each of which when executed and delivered shall constitute a duplicate original, but all counterparts together shall constitute a single agreement.':
     'This Constitution may be executed in any number of counterparts, each of which when executed and delivered shall constitute a duplicate original, but all counterparts together shall constitute a single agreement.',
-  'Set EOS staked in CPU': 'CPU 스테이크 양',
-  'Set EOS staked in NET': 'NET 스테이크 양',
+  'Set RSN staked in CPU': 'CPU 스테이크 양',
+  'Set RSN staked in NET': 'NET 스테이크 양',
   Staking: '스테이킹',
   'Transfer Tokens': '토큰 전송하기',
   'New account name': '새 계정 이름',
@@ -185,14 +185,14 @@ export default {
   'Active public key': '활성(Active) 공개키',
   'Active pubkey is required': '활성(Active) 공개키가 필요합니다.',
   'Active pubkey cannot be empty': '활성(Active) 공개키는 빈값일 수 없습니다.',
-  'CPU Stake (in EOS)': 'CPU 스테이크 (in EOS)',
+  'CPU Stake (in RSN)': 'CPU 스테이크 (in RSN)',
   'Required to process transaction': '트랜잭션 수행을 위해 필요합니다.',
   'CPU Stake is requied': 'CPU 스테이크가 필요합니다.',
-  'NET Stake (in EOS)': 'NET 스테이크 (in EOS)',
+  'NET Stake (in RSN)': 'NET 스테이크 (in RSN)',
   'Required to use network': '네트워크 사용을 위해 필요합니다.',
   'NET Stake is requied': 'NET 스테이크가 필요합니다.',
   'RAM purchase (in bytes)': '램 구매 (in bytes)',
-  'RAM purchase (in EOS)': '램 구매 (in EOS)',
+  'RAM purchase (in RSN)': '램 구매 (in RSN)',
   'Required to store account': '계정 저장을 위해 필요합니다.',
   'RAM purchase is required': '램 구매가 필요합니다.',
   'Buy RAM': '램 구매',
@@ -210,7 +210,7 @@ export default {
   Memo: '메모',
   'Symbol is required': '심볼이 필요합니다.',
   'Total balance after trasfer token': '토큰 전송 후 총 잔액',
-  'Available EOS (liquid)': '이용가능한 잔액',
+  'Available RSN (liquid)': '이용가능한 잔액',
   'You have no voter proxy': '현재 투표대리인이 없습니다.',
   'No Tokens': '보유한 토큰이 없습니다.',
   'Quantity is requied': '올바른 수량을 입력하세요',
@@ -250,6 +250,6 @@ export default {
   'Create Time': '생성 시간',
   'No Data': '데이터가 없습니다',
   Donation: '기부하기',
-  'EOSUITE TEAM': '이오슈트 팀',
+  'ArisenTools TEAM': '이오슈트 팀',
   'Thank you and enjoy our website': '감사합니다. 즐거운 서핑되세요'
 }

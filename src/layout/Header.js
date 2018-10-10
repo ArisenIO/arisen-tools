@@ -17,7 +17,7 @@ class Header extends Component {
             <header>
               <Link to="/">
                 <h5>
-                  <FormattedMessage id="Eosuite" />
+                  <FormattedMessage id="ArisenTools" />
                 </h5>
               </Link>
             </header>
@@ -43,7 +43,7 @@ class Header extends Component {
 
               <li>
                 <a
-                  href="https://github.com/epochchaser/eos-toolbox"
+                  href="https://github.com/arisenio/arisen-tools"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

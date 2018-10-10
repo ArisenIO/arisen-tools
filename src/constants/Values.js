@@ -1,15 +1,15 @@
 export const ACCOUNT_NAME_PATTERN = /([a-z1-5]){12,}/
 export const SEED_RAM_BYTES = 8192
-export const SEED_RAM_EOS = 1
+export const SEED_RAM_RSN = 1
 export const SEED_CPU = 0.1
 export const SEED_NET = 0.1
 
 export const actionPerPage = 1000
 
 const protocol = 'https'
-const host = 'eos.greymass.com'
+const host = 'greatchain.arisennodes.io'
 const port = 443
-const chainId = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906'
+const chainId = 'fffa80dc4492fedaa90cbc4ee6f5520568826dfb31ed9c8c161224349f6b82f5'
 
 // export const protocol = 'http';
 // export const host = '127.0.0.1';
@@ -19,7 +19,7 @@ const chainId = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e90
 export const requiredFields = {
   accounts: [
     {
-      blockchain: 'eos',
+      blockchain: 'rsn',
       host: host,
       port: port,
       chainId: chainId
@@ -28,7 +28,7 @@ export const requiredFields = {
 }
 
 export const NETWORK = {
-  blockchain: 'eos',
+  blockchain: 'rsn',
   protocol: protocol,
   host: host,
   port: port,

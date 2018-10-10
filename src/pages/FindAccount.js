@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { inject, observer } from '../../node_modules/mobx-react'
 
-@inject('eosioStore')
+@inject('arisenStore')
 @observer
 class FindAccount extends Component {
   render() {

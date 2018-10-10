@@ -12,7 +12,7 @@ class Main extends Component {
   }
 
   render() {
-    if (!this.commonStore._initilizedScatter && !this.commonStore._initilizedEos) {
+    if (!this.commonStore._initilizedScatter && !this.commonStore._initilizedRsn) {
       return <main />
     }
     return (

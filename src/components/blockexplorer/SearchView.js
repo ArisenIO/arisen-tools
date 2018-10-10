@@ -70,7 +70,7 @@ class SearchView extends Component {
             <div className="row">
               <div className="col-lg-6 offset-lg-3 m-t-10">
                 <h5 className="txt-highlight text-center">
-                  <FormattedMessage id="EOS Block Explorer" />
+                  <FormattedMessage id="Arisen Block Explorer" />
                 </h5>
                 <p className="text-muted text-center m-t-20">
                   <FormattedMessage id="Search with account, public key, transaction id, block number" />

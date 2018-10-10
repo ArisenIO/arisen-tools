@@ -8,10 +8,10 @@ import locale from './locale/locale'
 import { Provider } from 'mobx-react'
 import accountStore from './stores/accountStore'
 import commonStore from './stores/commonStore'
-import eosioStore from './stores/eosioStore'
+import arisenStore from './stores/arisenStore'
 import explorerStore from './stores/explorerStore'
 import initLocale, { getUserLocale } from 'react-intl-locale'
-import EosAgent from './EosAgent'
+import RsnAgent from './RsnAgent'
 import * as Utils from './utils/Utils'
 import * as Values from './constants/Values'
 
@@ -42,7 +42,7 @@ if (lang) {
 const stores = {
   accountStore,
   commonStore,
-  eosioStore,
+  arisenStore,
   explorerStore
 }
 
@@ -50,12 +50,12 @@ document.addEventListener('scatterLoaded', async scatterExtension => {
   console.log('scatterloaded')
 
   if (window.scatter) {
-    EosAgent.initScatter(window.scatter)
+    RsnAgent.initScatter(window.scatter)
     commonStore.initScatter(true)
 
     if (window.scatter.identity) {
-      EosAgent.initEosAgent(window.scatter.identity)
-      commonStore.initEos(true)
+      RsnAgent.initRsnAgent(window.scatter.identity)
+      commonStore.initRsn(true)
       await accountStore.loadAccountInfo()
     }
   }
@@ -66,7 +66,7 @@ document.addEventListener('scatterLoaded', async scatterExtension => {
 setTimeout(() => {
   if (!commonStore._initilizedScatter) {
     commonStore.setLoading(false)
-    commonStore.initEos(true)
+    commonStore.initRsn(true)
   }
 }, 1000)
 

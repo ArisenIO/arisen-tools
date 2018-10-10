@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { inject, observer } from 'mobx-react'
 import { FormattedMessage } from 'react-intl'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import ecc from 'eosjs-ecc'
+import ecc from 'arisenjs-ecc'
 
 @inject('commonStore')
 @observer

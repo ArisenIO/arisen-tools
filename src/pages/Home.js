@@ -6,14 +6,14 @@ import StakingView from '../components/home/StakingView'
 import BpListView from '../components/home/BpListView'
 import NameBidListView from '../components/home/NameBidListView'
 
-@inject('accountStore', 'eosioStore')
+@inject('accountStore', 'arisenStore')
 @observer
 class Home extends Component {
   constructor(props) {
     super(props)
-    let { accountStore, eosioStore } = this.props
+    let { accountStore, arisenStore } = this.props
     this.accountStore = accountStore
-    this.eosioStore = eosioStore
+    this.arisenStore = arisenStore
   }
 
   render() {

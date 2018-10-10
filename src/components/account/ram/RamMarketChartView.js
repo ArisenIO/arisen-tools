@@ -16,7 +16,7 @@ const margin = {
   right: 80
 }
 
-@inject('eosioStore')
+@inject('arisenStore')
 @observer
 class RamMarketChartView extends Component {
   componentDidMount = () => {
@@ -28,16 +28,16 @@ class RamMarketChartView extends Component {
   }
 
   fetchRamMarketInfo = () => {
-    const { eosioStore } = this.props
-    eosioStore.stackRamMarkets()
+    const { arisenStore } = this.props
+    arisenStore.stackRamMarkets()
   }
 
   x = d => new Date(d.date)
   y = d => d.close
 
   render() {
-    const { eosioStore, size } = this.props
-    const { ramMarketHistory } = eosioStore
+    const { arisenStore, size } = this.props
+    const { ramMarketHistory } = arisenStore
 
     if (!ramMarketHistory)
       return (

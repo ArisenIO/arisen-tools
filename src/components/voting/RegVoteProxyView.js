@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { FormattedMessage } from 'react-intl'
-import EosAgent from '../../EosAgent'
+import RsnAgent from '../../RsnAgent'
 import Swal from 'sweetalert2'
 
 @inject('accountStore')
@@ -20,7 +20,7 @@ class RegVoteProxyView extends Component {
         confirmButtonText: 'Comfirm',
         showLoaderOnConfirm: true,
         preConfirm: () => {
-          return EosAgent.regproxy(accountStore.account.name)
+          return RsnAgent.regproxy(accountStore.account.name)
             .then(async response => {
               await accountStore.loadAccountInfo()
               return response
@@ -68,7 +68,7 @@ class RegVoteProxyView extends Component {
         confirmButtonText: 'Comfirm',
         showLoaderOnConfirm: true,
         preConfirm: () => {
-          return EosAgent.unregproxy(accountStore.account.name)
+          return RsnAgent.unregproxy(accountStore.account.name)
             .then(async response => {
               await accountStore.loadAccountInfo()
               return response

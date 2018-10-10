@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react'
 import NumberFormat from 'react-number-format'
 import { FormattedMessage } from 'react-intl'
 
-@inject('eosioStore')
+@inject('arisenStore')
 @observer
 class BlockView extends Component {
   constructor(props) {
@@ -24,34 +24,34 @@ class BlockView extends Component {
   }
 
   update = async () => {
-    const { eosioStore } = this.props
-    eosioStore.getInfo()
-    eosioStore.getGlobalInfo()
+    const { arisenStore } = this.props
+    arisenStore.getInfo()
+    arisenStore.getGlobalInfo()
 
-    if (eosioStore.eosInfo) {
+    if (arisenStore.rsnInfo) {
       this.setState({
-        irreversible_block_offset: Number(eosioStore.eosInfo.last_irreversible_block_num),
-        head_block_offset: Number(eosioStore.eosInfo.head_block_num)
+        irreversible_block_offset: Number(arisenStore.rsnInfo.last_irreversible_block_num),
+        head_block_offset: Number(arisenStore.rsnInfo.head_block_num)
       })
     }
   }
 
   render() {
-    const { eosioStore } = this.props
+    const { arisenStore } = this.props
     const { irreversible_block_offset, head_block_offset } = this.state
 
     let irresOffset = 0
     let headOffset = 0
 
-    if (eosioStore.eosInfo) {
-      irresOffset = eosioStore.eosInfo.last_irreversible_block_num - irreversible_block_offset
-      headOffset = eosioStore.eosInfo.head_block_num - head_block_offset
+    if (arisenStore.rsnInfo) {
+      irresOffset = arisenStore.rsnInfo.last_irreversible_block_num - irreversible_block_offset
+      headOffset = arisenStore.rsnInfo.head_block_num - head_block_offset
     }
 
     return (
       <div className="row">
-        {eosioStore &&
-          eosioStore.eosInfo && (
+        {arisenStore &&
+          arisenStore.rsnInfo && (
             <div className="col-md-12">
               <div className="card card-statistics ">
                 <div className="card-header ">
@@ -68,7 +68,7 @@ class BlockView extends Component {
                         <div className="col-lg-12 ">
                           <h2 className="m-b-40 f-50 ">
                             <NumberFormat
-                              value={eosioStore.eosInfo.last_irreversible_block_num}
+                              value={arisenStore.rsnInfo.last_irreversible_block_num}
                               displayType={'text'}
                               thousandSeparator={true}
                             />
@@ -87,7 +87,7 @@ class BlockView extends Component {
                         <div className="col-lg-12 ">
                           <h2 className="m-b-40 f-50 ">
                             <NumberFormat
-                              value={eosioStore.eosInfo.head_block_num}
+                              value={arisenStore.rsnInfo.head_block_num}
                               displayType={'text'}
                               thousandSeparator={true}
                             />
@@ -103,7 +103,7 @@ class BlockView extends Component {
                     <div className="col-sm-4 ">
                       <div className="row stats-block">
                         <div className="col-lg-12 ">
-                          <h2 className="m-b-40 f-50 ">{eosioStore.eosInfo.head_block_producer}</h2>
+                          <h2 className="m-b-40 f-50 ">{arisenStore.rsnInfo.head_block_producer}</h2>
                           <p className="text-muted ">
                             <FormattedMessage id="Head Block Producer" />
                             <i className="fa fa-caret-up m-l-10 text-c-green" />

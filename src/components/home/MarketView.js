@@ -3,20 +3,20 @@ import { inject, observer } from 'mobx-react'
 import NumberFormat from 'react-number-format'
 import { FormattedMessage } from 'react-intl'
 
-@inject('eosioStore', 'commonStore')
+@inject('arisenStore', 'commonStore')
 @observer
 class MarketView extends Component {
   constructor(props) {
     super(props)
-    let { eosioStore, commonStore } = this.props
-    this.eosioStore = eosioStore
+    let { arisenStore, commonStore } = this.props
+    this.arisenStore = arisenStore
     this.commonStore = commonStore
   }
 
   componentDidMount = async () => {
     await this.commonStore.getCoinMarketCap()
-    await this.eosioStore.getGlobalInfo()
-    await this.eosioStore.getCurrencyStats()
+    await this.arisenStore.getGlobalInfo()
+    await this.arisenStore.getCurrencyStats()
     this.update()
 
     this.intervalId = setInterval(this.update, 1500)
@@ -27,20 +27,20 @@ class MarketView extends Component {
   }
 
   update = async () => {
-    await this.eosioStore.getRamMarkets()
+    await this.arisenStore.getRamMarkets()
   }
 
   render() {
-    const percent = this.eosioStore.ramInfo
-      ? `${this.eosioStore.ramInfo.reservedRamPercent.toFixed(0)}%`
+    const percent = this.arisenStore.ramInfo
+      ? `${this.arisenStore.ramInfo.reservedRamPercent.toFixed(0)}%`
       : '0%'
     const reservedRamChartStyle = {
       width: percent
     }
     return (
       <div>
-        {this.eosioStore.ramInfo &&
-          this.eosioStore.currencyStats &&
+        {this.arisenStore.ramInfo &&
+          this.arisenStore.currencyStats &&
           this.commonStore.coinMarketCap && (
             <div className="row">
               <div className="col-md-12 col-xl-6">
@@ -110,7 +110,7 @@ class MarketView extends Component {
                           <span className="text-muted">
                             <NumberFormat
                               value={Number(
-                                this.eosioStore.currencyStats.EOS.supply.replace('EOS', '')
+                                this.arisenStore.currencyStats.EOS.supply.replace('EOS', '')
                               ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
@@ -125,7 +125,7 @@ class MarketView extends Component {
                           <span className="text-muted">
                             <NumberFormat
                               value={Number(
-                                this.eosioStore.currencyStats.EOS.max_supply.replace('EOS', '')
+                                this.arisenStore.currencyStats.EOS.max_supply.replace('EOS', '')
                               ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
@@ -150,7 +150,7 @@ class MarketView extends Component {
                   <div className="card-block-big ">
                     <h2 className="text-c-green d-inline-block m-b-40 f-40 ">
                       <NumberFormat
-                        value={this.eosioStore.ramInfo.kbPrice.toFixed(8)}
+                        value={this.arisenStore.ramInfo.kbPrice.toFixed(8)}
                         displayType={'text'}
                         thousandSeparator={true}
                       />
@@ -163,7 +163,7 @@ class MarketView extends Component {
                       <div className="col-sm-6 ">
                         <h3 className="text-muted d-inline-block">
                           <NumberFormat
-                            value={this.eosioStore.ramInfo.freeRamGb.toFixed(2)}
+                            value={this.arisenStore.ramInfo.freeRamGb.toFixed(2)}
                             displayType={'text'}
                             thousandSeparator={true}
                           />
@@ -177,7 +177,7 @@ class MarketView extends Component {
                       <div className="col-sm-6 ">
                         <h3 className="text-muted d-inline-block">
                           <NumberFormat
-                            value={this.eosioStore.ramInfo.eos.toFixed(0)}
+                            value={this.arisenStore.ramInfo.eos.toFixed(0)}
                             displayType={'text'}
                             thousandSeparator={true}
                           />
@@ -196,13 +196,13 @@ class MarketView extends Component {
                               style={{ width: '50%' }}
                             >
                               <NumberFormat
-                                value={this.eosioStore.ramInfo.reservedRamGb.toFixed(2)}
+                                value={this.arisenStore.ramInfo.reservedRamGb.toFixed(2)}
                                 displayType={'text'}
                                 thousandSeparator={true}
                                 suffix={'GB'}
                               />{' '}
                               (<NumberFormat
-                                value={this.eosioStore.ramInfo.reservedRamPercent.toFixed(2)}
+                                value={this.arisenStore.ramInfo.reservedRamPercent.toFixed(2)}
                                 displayType={'text'}
                                 thousandSeparator={true}
                                 suffix={'%'}
@@ -213,7 +213,7 @@ class MarketView extends Component {
                               style={{ width: '50%' }}
                             >
                               <NumberFormat
-                                value={this.eosioStore.ramInfo.totalRamGb.toFixed(2)}
+                                value={this.arisenStore.ramInfo.totalRamGb.toFixed(2)}
                                 displayType={'text'}
                                 thousandSeparator={true}
                                 suffix={'GB'}

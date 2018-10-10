@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { FormattedMessage } from 'react-intl'
-import EosAgent from '../../EosAgent'
+import RsnAgent from '../../RsnAgent'
 import Swal from 'sweetalert2'
 
 @inject('accountStore')
@@ -24,7 +24,7 @@ class RefundView extends Component {
       confirmButtonText: 'Comfirm',
       showLoaderOnConfirm: true,
       preConfirm: owner => {
-        return EosAgent.refund(owner)
+        return RsnAgent.refund(owner)
           .then(async response => {
             await accountStore.loadAccountInfo()
             return response
@@ -72,14 +72,14 @@ class RefundView extends Component {
                     <FormattedMessage id="Claim Refund" />
                   </h5>
                   <p className="text-muted text-center m-t-20">
-                    <FormattedMessage id="By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract." />
+                    <FormattedMessage id="By executing this action you are agreeing to the RSN Constitution and this actions associated ricardian contract." />
                   </p>
                 </div>
                 <div className="col-lg-6 offset-lg-3">
                   <div className="card-block text-center">
                     <i className="fa fa-sign-in text-c-green d-block f-40" />
                     <h4 className="m-t-20">
-                      {`${Number(accountStore.totalRefund).toFixed(4)} EOS`}
+                      {`${Number(accountStore.totalRefund).toFixed(4)} RSN`}
                     </h4>
                     <p className="m-b-20">
                       <FormattedMessage id="Unstaked amount" />

@@ -94,7 +94,7 @@ class CreateAccountView extends Component {
     Swal({
       title: 'Create Account',
       text:
-        'By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract.',
+        'By executing this action you are agreeing to the Arisen Constitution and this actions associated ricardian contract.',
       showCancelButton: true,
       confirmButtonText: 'Create',
       showLoaderOnConfirm: true,
@@ -180,11 +180,11 @@ class CreateAccountView extends Component {
     const usageEosRate = (staked / totalBalance) * 100
 
     console.log(totalBalance)
-    const eosResource = {
-      title: 'EOS Available',
+    const rsnResource = {
+      title: 'RSN Available',
       fixed: 4,
       available: liquid,
-      unit: ' EOS',
+      unit: ' RSN',
       used: staked,
       max: totalBalance,
       usageRate: usageEosRate,
@@ -197,7 +197,7 @@ class CreateAccountView extends Component {
       accountStore.accountInfo && (
         <Fragment>
           <div className="col-sm-12">
-            <UsageResourceView resource={eosResource} />
+            <UsageResourceView resource={rsnResource} />
           </div>
 
           <div className="col-sm-12">
@@ -283,7 +283,7 @@ class CreateAccountView extends Component {
                 <div className={cpuStakeForm}>
                   <div className="col-sm-2">
                     <label className="col-form-label" htmlFor="cpuStakeInputDanger">
-                      <FormattedMessage id="CPU Stake (in EOS)" />
+                      <FormattedMessage id="CPU Stake (in RSN)" />
                     </label>
                   </div>
                   <div className="col-sm-10">
@@ -307,7 +307,7 @@ class CreateAccountView extends Component {
                 <div className={netStakeForm}>
                   <div className="col-sm-2">
                     <label className="col-form-label" htmlFor="netStakeInputDanger">
-                      <FormattedMessage id="NET Stake (in EOS)" />
+                      <FormattedMessage id="NET Stake (in RSN)" />
                     </label>
                   </div>
                   <div className="col-sm-10">

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import EosConstitutionView from '../components/constitution/EosConstitutionView'
+import RsnConstitutionView from '../components/constitution/RsnConstitutionView'
 
 class Constitution extends Component {
   render() {
@@ -8,7 +8,7 @@ class Constitution extends Component {
         <div className="page-wrapper">
           <div className="page-body">
             <div className="row">
-              <EosConstitutionView />
+              <RsnConstitutionView />
             </div>
           </div>
         </div>

@@ -28,11 +28,11 @@ class AccountView extends Component {
 
   render() {
     const permissions = []
-    const stakeEos = this.explorerStore.account.stake
-    const unstakeEos = this.explorerStore.account.unstake
-    const refundEos = this.explorerStore.account.refund
-    const totalEos = stakeEos + unstakeEos + refundEos
-    const usageEosRate = (stakeEos / totalEos) * 100
+    const stakeRsn = this.explorerStore.account.stake
+    const unstakeRsn = this.explorerStore.account.unstake
+    const refundRsn = this.explorerStore.account.refund
+    const totalRsn = stakeRsn + unstakeRsn + refundRsn
+    const usageRsnRate = (stakeRsn / totalRsn) * 100
 
     const cpuUsed =
       this.explorerStore.account.cpu_limit.used > 0 ? this.explorerStore.account.cpu_limit.used : 0
@@ -72,14 +72,14 @@ class AccountView extends Component {
       color: 'green'
     }
 
-    const eosResource = {
-      title: 'EOS Available',
+    const rsnResource = {
+      title: 'RSN Available',
       fixed: 4,
-      available: unstakeEos,
-      unit: ' EOS',
-      used: stakeEos,
-      max: totalEos,
-      usageRate: usageEosRate,
+      available: unstakeRsn,
+      unit: ' RSN',
+      used: stakeRsn,
+      max: totalRsn,
+      usageRate: usageRsnRate,
       color: 'pink'
     }
 
@@ -105,7 +105,7 @@ class AccountView extends Component {
       color: 'yellow'
     }
 
-    const img_path = '/images/eos-symbol.png'
+    const img_path = '/images/rsn-symbol.png'
 
     return (
       <Fragment>
@@ -121,7 +121,7 @@ class AccountView extends Component {
                 <img
                   src={img_path}
                   className="img-radius"
-                  alt="EOS Logo"
+                  alt="RSN Logo"
                   style={{ width: '100px', height: '100px' }}
                 />
               </div>
@@ -137,7 +137,7 @@ class AccountView extends Component {
                   value={this.explorerStore.account.total.toFixed(4)}
                   displayType={'text'}
                   thousandSeparator={true}
-                  suffix={' EOS'}
+                  suffix={' RSN'}
                 />
               </p>
               <div className="bg-c-blue counter-block p-15" style={{ height: '58px' }}>
@@ -149,7 +149,7 @@ class AccountView extends Component {
                         value={this.explorerStore.account.unstake.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' EOS'}
+                        suffix={' RSN'}
                       />
                     </p>
                   </div>
@@ -160,7 +160,7 @@ class AccountView extends Component {
                         value={this.explorerStore.account.stake.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' EOS'}
+                        suffix={' RSN'}
                       />
                     </p>
                   </div>
@@ -171,7 +171,7 @@ class AccountView extends Component {
                         value={this.explorerStore.account.refund.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' EOS'}
+                        suffix={' RSN'}
                       />
                     </p>
                   </div>
@@ -181,7 +181,7 @@ class AccountView extends Component {
           </div>
         </div>
         <div className="col-lg-6 col-md-12 col-xl-4">
-          <UsageResourceView resource={eosResource} />
+          <UsageResourceView resource={rsnResource} />
           <UsageResourceView resource={cpuResource} />
         </div>
         <div className="col-lg-6 col-md-12 col-xl-4">

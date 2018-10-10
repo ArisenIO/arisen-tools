@@ -1,5 +1,5 @@
 export default {
-  Eosuite: 'Eosuite',
+  ArisenTools: 'ArisenTools',
   Login: 'Login',
   Logout: 'Logout',
   'Irreversible Blocks': 'Irreversible Blocks',
@@ -41,7 +41,7 @@ export default {
   'Your transaction(s) have been submitted to the blockchain.':
     'Your transaction(s) have been submitted to the blockchain.',
   'Block Explorer': 'Block Explorer',
-  'EOS Block Explorer': 'EOS Block Explorer',
+  'RSN Block Explorer': 'RSN Block Explorer',
   'Search with account, public key, transaction id, block number':
     'Search with account, public key, transaction id, block number',
   'No Seasrch Results': 'No Seasrch Results',
@@ -55,15 +55,15 @@ export default {
   'Simulate values you want to undelegate and click confirm.':
     'Simulate values you want to undelegate and click confirm.',
   Confirm: 'Confirm',
-  'EOS Available': 'EOS Available',
+  'RSN Available': 'RSN Available',
   'RAM Available': 'RAM Available',
   'CPU Available': 'CPU Available',
   'NET Available': 'NET Available',
   Usaged: 'Usaged',
   Staked: 'Staked',
   Error: 'Error',
-  'Insufficient available EOS balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network.':
-    'Insufficient available EOS balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network.',
+  'Insufficient available RSN balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network.':
+    'Insufficient available RSN balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network.',
   Actions: 'Actions',
   ID: 'ID',
   TYPE: 'TYPE',
@@ -104,8 +104,8 @@ export default {
   'Unregister as proxy voter': 'Unregister as proxy voter',
   'Register as proxy voter': 'Register as proxy voter',
   'Claim Refund': 'Claim Refund',
-  'By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract.':
-    'By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract.',
+  'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.':
+    'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.',
   'Unstaked amount': 'Unstaked amount',
   Claim: 'Claim',
   'Total Staked after update for CPU': 'Total Staked after update for CPU',
@@ -170,8 +170,8 @@ export default {
   'Article XIX - Counterparts': 'Article XIX - Counterparts',
   'This Constitution may be executed in any number of counterparts, each of which when executed and delivered shall constitute a duplicate original, but all counterparts together shall constitute a single agreement.':
     'This Constitution may be executed in any number of counterparts, each of which when executed and delivered shall constitute a duplicate original, but all counterparts together shall constitute a single agreement.',
-  'Set EOS staked in CPU': 'Set EOS staked in CPU',
-  'Set EOS staked in NET': 'Set EOS staked in NET',
+  'Set RSN staked in CPU': 'Set RSN staked in CPU',
+  'Set RSN staked in NET': 'Set RSN staked in NET',
   'Transfer Tokens': 'Transfer Tokens',
   'New account name': 'New account name',
   '12 characters, a-z, 1-5': '12 characters, a-z, 1-5',
@@ -185,14 +185,14 @@ export default {
   'Active public key': 'Active public key',
   'Active pubkey is required': 'Active pubkey is required',
   'Active pubkey cannot be empty': 'Active pubkey cannot be empty',
-  'CPU Stake (in EOS)': 'CPU Stake (in EOS)',
+  'CPU Stake (in RSN)': 'CPU Stake (in RSN)',
   'Required to process transaction': 'Required to process transaction',
   'CPU Stake is requied': 'CPU Stake is requied',
-  'NET Stake (in EOS)': 'NET Stake (in EOS)',
+  'NET Stake (in RSN)': 'NET Stake (in RSN)',
   'Required to use network': 'Required to use network',
   'NET Stake is requied': 'NET Stake is requied',
   'RAM purchase (in bytes)': 'RAM purchase (in bytes)',
-  'RAM purchase (in EOS)': 'RAM purchase (in EOS)',
+  'RAM purchase (in RSN)': 'RAM purchase (in RSN)',
   'Required to store account': 'Required to store account',
   'RAM purchase is required': 'RAM purchase is required',
   'Buy RAM': 'Buy RAM',
@@ -210,7 +210,7 @@ export default {
   Memo: 'Memo',
   'Symbol is required': 'Symbol is required',
   'Total balance after trasfer token': 'Total balance after trasfer token',
-  'Available EOS (liquid)': 'Available EOS (liquid)',
+  'Available RSN (liquid)': 'Available RSN (liquid)',
   'Available tokens': 'Available tokens',
   'You have no voter proxy': 'You have no voter proxy',
   'No Tokens': 'No Tokens',
@@ -250,6 +250,6 @@ export default {
   'Create Time': 'Create Time',
   'No Data': 'No Data',
   Donation: 'Donation',
-  'EOSUITE TEAM': 'EOSUITE TEAM',
+  'RSNUITE TEAM': 'RSNUITE TEAM',
   'Thank you and enjoy our website': 'Thank you and enjoy our website'
 }

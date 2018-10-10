@@ -1,10 +1,10 @@
 import { decorate, observable, action } from 'mobx'
-import EosAgent from '../EosAgent'
+import RsnAgent from '../RsnAgent'
 import sortBy from 'lodash/sortBy'
 
-export class EosioStore {
+export class ArisenStore {
   global = null
-  eosInfo = null
+  rsnInfo = null
   blockProducers = null
   ramMarkets = null
   ramInfo = null
@@ -15,20 +15,20 @@ export class EosioStore {
   currencyStats = null
 
   getInfo = async () => {
-    let info = await EosAgent.getInfo()
-    this.eosInfo = info
-    // {"server_version":"60947c0c","chain_id":"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906","head_block_num":6034331,"last_irreversible_block_num":6033999,"last_irreversible_block_id":"005c124f52b8ff52faf9a1088879163327759deefd35fe7dd1d82e7ab292508c","head_block_id":"005c139b3f9f1d8c2419c906ad774a19661784270671b987aaad877964db5db2","head_block_time":"2018-07-15T15:59:03.500","head_block_producer":"eoscleanerbp","virtual_block_cpu_limit":200000000,"virtual_block_net_limit":1048576000,"block_cpu_limit":199900,"block_net_limit":1048576}
+    let info = await RsnAgent.getInfo()
+    this.rsnInfo = info
+    // {"server_version":"60947c0c","chain_id":"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906","head_block_num":6034331,"last_irreversible_block_num":6033999,"last_irreversible_block_id":"005c124f52b8ff52faf9a1088879163327759deefd35fe7dd1d82e7ab292508c","head_block_id":"005c139b3f9f1d8c2419c906ad774a19661784270671b987aaad877964db5db2","head_block_time":"2018-07-15T15:59:03.500","head_block_producer":"rsncleanerbp","virtual_block_cpu_limit":200000000,"virtual_block_net_limit":1048576000,"block_cpu_limit":199900,"block_net_limit":1048576}
   }
 
   getGlobalInfo = async () => {
     const query = {
       json: true,
-      code: 'eosio',
-      scope: 'eosio',
+      code: 'arisen',
+      scope: 'arisen',
       table: 'global'
     }
 
-    let globalInfo = await EosAgent.getTableRows(query)
+    let globalInfo = await RsnAgent.getTableRows(query)
     if (globalInfo) {
       this.global = globalInfo.rows[0]
     }
@@ -39,14 +39,14 @@ export class EosioStore {
   getCurrencyStats = async () => {
     this.currencyStats = null
 
-    this.currencyStats = await EosAgent.getCurrencyStats({ code: 'eosio.token', symbol: 'EOS' })
+    this.currencyStats = await RsnAgent.getCurrencyStats({ code: 'arisen.token', symbol: 'RSN' })
   }
 
   getBlockProducers = async () => {
     const query = {
       json: true,
-      code: 'eosio',
-      scope: 'eosio',
+      code: 'arisen',
+      scope: 'arisen',
       table: 'producers',
       limit: 1000
     }
@@ -61,8 +61,8 @@ export class EosioStore {
 
     let backupMinimumPercent = false
     let tokensToProducersForVotes = false
-    const currencyStats = await EosAgent.getCurrencyStats({ code: 'eosio.token', symbol: 'EOS' })
-    const supply = parseFloat(currencyStats.EOS.supply)
+    const currencyStats = await RsnAgent.getCurrencyStats({ code: 'arisen.token', symbol: 'RSN' })
+    const supply = parseFloat(currencyStats.RSN.supply)
     // yearly inflation
     const inflation = 0.04879
     // Tokens per year
@@ -76,10 +76,10 @@ export class EosioStore {
     // Percentage required to earn 100 tokens/day (break point for backups)
     backupMinimumPercent = 100 / tokensToProducersForVotes
 
-    const result = await EosAgent.getTableRows(query)
+    const result = await RsnAgent.getTableRows(query)
 
     const data = result.rows
-      .filter(p => p.producer_key !== 'EOS1111111111111111111111111111111114T1Anm')
+      .filter(p => p.producer_key !== 'RSN1111111111111111111111111111111114T1Anm')
       .map(producer => {
         const votes = parseInt(producer.total_votes, 10)
         const percent = votes / totalProducerVoteWeight
@@ -122,8 +122,8 @@ export class EosioStore {
   getRamMarkets = async () => {
     const query = {
       json: true,
-      code: 'eosio',
-      scope: 'eosio',
+      code: 'arisen',
+      scope: 'arisen',
       table: 'rammarket',
       limit: 1
     }
@@ -132,19 +132,19 @@ export class EosioStore {
       await this.getGlobalInfo()
     }
 
-    let ramMarkets = await EosAgent.getTableRows(query)
+    let ramMarkets = await RsnAgent.getTableRows(query)
     let ramInfo = null
 
     if (ramMarkets) {
       this.ramMarkets = ramMarkets.rows[0]
 
       //Bancor Algorithm
-      //EOS/BYTE =  quote_balance / (base_balance x quote_weight)
+      //RSN/BYTE =  quote_balance / (base_balance x quote_weight)
       const ram = Number(this.ramMarkets.base.balance.replace('RAM', ''))
-      const eos = Number(this.ramMarkets.quote.balance.replace('EOS', ''))
+      const rsn = Number(this.ramMarkets.quote.balance.replace('RSN', ''))
       const weight = Number(this.ramMarkets.quote.weight)
-      const bPrice = eos / (ram * weight)
-      const kbPrice = (eos / ram) * 1024
+      const bPrice = rsn / (ram * weight)
+      const kbPrice = (rsn / ram) * 1024
       const reservedRamPercent = Number(
         (this.global.total_ram_bytes_reserved / this.global.max_ram_size) * 100
       )
@@ -155,7 +155,7 @@ export class EosioStore {
 
       ramInfo = {
         ram,
-        eos,
+        rsn,
         bPrice,
         kbPrice,
         reservedRamPercent,
@@ -164,7 +164,7 @@ export class EosioStore {
         freeRamGb
       }
 
-      //{"supply":"10000000000.0000 RAMCORE","base":{"balance":"16389760351 RAM","weight":"0.50000000000000000"},"quote":{"balance":"4192901.1209 EOS","weight":"0.50000000000000000"}}
+      //{"supply":"10000000000.0000 RAMCORE","base":{"balance":"16389760351 RAM","weight":"0.50000000000000000"},"quote":{"balance":"4192901.1209 RSN","weight":"0.50000000000000000"}}
     }
 
     this.ramInfo = ramInfo
@@ -186,26 +186,26 @@ export class EosioStore {
   getVoters = async () => {
     const query = {
       json: true,
-      code: 'eosio',
-      scope: 'eosio',
+      code: 'arisen',
+      scope: 'arisen',
       table: 'voters',
       table_key: 'owner',
       limit: 1000
     }
 
-    let voters = await EosAgent.getTableRows(query)
+    let voters = await RsnAgent.getTableRows(query)
   }
 
   getNameBids = async () => {
     const query = {
       json: true,
-      code: 'eosio',
-      scope: 'eosio',
+      code: 'arisen',
+      scope: 'arisen',
       table: 'namebids',
       limit: 10000
     }
 
-    let nameBids = await EosAgent.getTableRows(query)
+    let nameBids = await RsnAgent.getTableRows(query)
     if (nameBids) {
       const data = nameBids.rows.filter(n => n.newname !== '').map(newname => {
         const highBid = newname.high_bid
@@ -223,9 +223,9 @@ export class EosioStore {
   }
 }
 
-decorate(EosioStore, {
+decorate(ArisenStore, {
   global: observable,
-  eosInfo: observable,
+  rsnInfo: observable,
   blockProducers: observable,
   ramMarkets: observable,
   ramInfo: observable,
@@ -245,4 +245,4 @@ decorate(EosioStore, {
   getCurrencyStats: action
 })
 
-export default new EosioStore()
+export default new ArisenStore()

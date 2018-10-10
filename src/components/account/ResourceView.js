@@ -13,27 +13,27 @@ class ResourceView extends Component {
 
   render() {
     const cpu = this.accountStore.accountInfo.total_resources
-      ? Number(this.accountStore.accountInfo.total_resources.cpu_weight.replace('EOS', ''))
+      ? Number(this.accountStore.accountInfo.total_resources.cpu_weight.replace('RSN', ''))
       : 0.0
     const net = this.accountStore.accountInfo.total_resources
-      ? Number(this.accountStore.accountInfo.total_resources.net_weight.replace('EOS', ''))
+      ? Number(this.accountStore.accountInfo.total_resources.net_weight.replace('RSN', ''))
       : 0.0
 
-    const stakeEos = cpu + net
-    const unstakeEos = this.accountStore.accountInfo.core_liquid_balance
-      ? Number(this.accountStore.accountInfo.core_liquid_balance.replace('EOS', ''))
+    const stakeRsn = cpu + net
+    const unstakeRsn = this.accountStore.accountInfo.core_liquid_balance
+      ? Number(this.accountStore.accountInfo.core_liquid_balance.replace('RSN', ''))
       : 0.0
 
     const refundCpu = this.accountStore.accountInfo.refund_request
-      ? Number(this.accountStore.accountInfo.refund_request.cpu_amount.replace('EOS', ''))
+      ? Number(this.accountStore.accountInfo.refund_request.cpu_amount.replace('RSN', ''))
       : 0.0
     const refundNet = this.accountStore.accountInfo.refund_request
-      ? Number(this.accountStore.accountInfo.refund_request.net_amount.replace('EOS', ''))
+      ? Number(this.accountStore.accountInfo.refund_request.net_amount.replace('RSN', ''))
       : 0.0
 
-    const refundEos = refundCpu + refundNet
-    const totalEos = stakeEos + unstakeEos + refundEos
-    const usageEosRate = (stakeEos / totalEos) * 100
+    const refundRsn = refundCpu + refundNet
+    const totalRsn = stakeRsn + unstakeRsn + refundRsn
+    const usageRsnRate = (stakeRsn / totalRsn) * 100
 
     const cpuUsed =
       this.accountStore.accountInfo.cpu_limit.used > 0
@@ -81,14 +81,14 @@ class ResourceView extends Component {
       color: 'green'
     }
 
-    const eosResource = {
-      title: 'EOS Available',
+    const rsnResource = {
+      title: 'RSN Available',
       fixed: 4,
-      available: unstakeEos,
-      unit: ' EOS',
-      used: stakeEos,
-      max: totalEos,
-      usageRate: usageEosRate,
+      available: unstakeRsn,
+      unit: ' RSN',
+      used: stakeRsn,
+      max: totalRsn,
+      usageRate: usageRsnRate,
       color: 'pink'
     }
 
@@ -120,7 +120,7 @@ class ResourceView extends Component {
             <div className="page-body">
               <div className="row">
                 <div className="col-lg-6 col-md-12">
-                  <UsageResourceView resource={eosResource} />
+                  <UsageResourceView resource={rsnResource} />
                 </div>
                 <div className="col-lg-6 col-md-12">
                   <UsageResourceView resource={ramResource} />

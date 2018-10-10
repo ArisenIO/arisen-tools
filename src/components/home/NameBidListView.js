@@ -3,25 +3,25 @@ import { inject, observer } from 'mobx-react'
 import NumberFormat from 'react-number-format'
 import { FormattedMessage } from 'react-intl'
 
-@inject('eosioStore')
+@inject('arisenStore')
 @observer
 class NameBidListView extends Component {
   constructor(props) {
     super(props)
-    const { eosioStore } = this.props
-    this.eosioStore = eosioStore
+    const { arisenStore } = this.props
+    this.arisenStore = arisenStore
   }
 
   componentDidMount = async () => {
-    await this.eosioStore.getGlobalInfo()
-    this.eosioStore.getNameBids()
+    await this.arisenStore.getGlobalInfo()
+    this.arisenStore.getNameBids()
   }
 
   render() {
     let namebidList = []
 
-    if (this.eosioStore.nameBids) {
-      namebidList = this.eosioStore.nameBids.slice(0, 30)
+    if (this.arisenStore.nameBids) {
+      namebidList = this.arisenStore.nameBids.slice(0, 30)
     }
     return (
       <div className="col-md-6">
@@ -87,7 +87,7 @@ class NameBidListView extends Component {
                     value={(n.high_bid / 10000).toFixed(4)}
                     displayType={'text'}
                     thousandSeparator={true}
-                    suffix={' EOS'}
+                    suffix={' RSN'}
                   />
                 </label>
               </div>

@@ -3,14 +3,14 @@ import { inject, observer } from '../../../node_modules/mobx-react'
 import sortBy from 'lodash/sortBy'
 import { FormattedMessage } from 'react-intl'
 
-@inject('eosioStore', 'accountStore')
+@inject('arisenStore', 'accountStore')
 @observer
 class BlockProducersView extends Component {
   componentDidMount = async () => {
-    const { eosioStore } = this.props
+    const { arisenStore } = this.props
 
-    if (!eosioStore) return
-    eosioStore.getBlockProducers()
+    if (!arisenStore) return
+    arisenStore.getBlockProducers()
   }
 
   onCheckChange = name => event => {
@@ -21,8 +21,8 @@ class BlockProducersView extends Component {
   }
 
   render() {
-    const { eosioStore } = this.props
-    const { blockProducers } = eosioStore
+    const { arisenStore } = this.props
+    const { blockProducers } = arisenStore
 
     return (
       <div className="card">

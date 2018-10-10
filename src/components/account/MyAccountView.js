@@ -16,27 +16,27 @@ class MyAccountView extends Component {
   render() {
     const { accountStore, explorerStore } = this.props
     const cpu = accountStore.accountInfo.total_resources
-      ? Number(accountStore.accountInfo.total_resources.cpu_weight.replace('EOS', ''))
+      ? Number(accountStore.accountInfo.total_resources.cpu_weight.replace('RSN', ''))
       : 0.0
     const net = accountStore.accountInfo.total_resources
-      ? Number(accountStore.accountInfo.total_resources.net_weight.replace('EOS', ''))
+      ? Number(accountStore.accountInfo.total_resources.net_weight.replace('RSN', ''))
       : 0.0
 
-    const stakeEos = cpu + net
-    const unstakeEos = accountStore.accountInfo.core_liquid_balance
-      ? Number(accountStore.accountInfo.core_liquid_balance.replace('EOS', ''))
+    const stakeRsn = cpu + net
+    const unstakeRsn = accountStore.accountInfo.core_liquid_balance
+      ? Number(accountStore.accountInfo.core_liquid_balance.replace('RSN', ''))
       : 0.0
 
     const refundCpu = accountStore.accountInfo.refund_request
-      ? Number(accountStore.accountInfo.refund_request.cpu_amount.replace('EOS', ''))
+      ? Number(accountStore.accountInfo.refund_request.cpu_amount.replace('RSN', ''))
       : 0.0
     const refundNet = accountStore.accountInfo.refund_request
-      ? Number(accountStore.accountInfo.refund_request.net_amount.replace('EOS', ''))
+      ? Number(accountStore.accountInfo.refund_request.net_amount.replace('RSN', ''))
       : 0.0
 
-    const refundEos = refundCpu + refundNet
-    const totalEos = (stakeEos + unstakeEos + refundEos).toFixed(4)
-    const usageEosRate = (stakeEos / totalEos) * 100
+    const refundRsn = refundCpu + refundNet
+    const totalRsn = (stakeRsn + unstakeRsn + refundRsn).toFixed(4)
+    const usageRsnRate = (stakeRsn / totalRsn) * 100
 
     const cpuUsed =
       accountStore.accountInfo.cpu_limit.used > 0 ? accountStore.accountInfo.cpu_limit.used : 0
@@ -63,35 +63,35 @@ class MyAccountView extends Component {
     const ramAvailable = ramMax - ramUsed
     const usageRamRate = ramMax > 0 ? (ramUsed / ramMax) * 100 : 0
 
-    const eosBalance = {
+    const rsnBalance = {
       title: 'Balance',
       subTitle: 'Total',
-      balance: accountStore.eosBalance ? accountStore.eosBalance : 0,
-      unit: ' EOS',
-      total: totalEos,
-      totalUnit: ' EOS',
+      balance: accountStore.rsnBalance ? accountStore.rsnBalance : 0,
+      unit: ' RSN',
+      total: totalRsn,
+      totalUnit: ' RSN',
       color: 'bg-c-pink',
       icon: 'ti-wallet'
     }
 
-    const stakedEosBalance = {
+    const stakedRsnBalance = {
       title: 'Staked',
       subTitle: 'Total',
-      balance: stakeEos.toFixed(4),
-      unit: ' EOS',
-      total: totalEos,
-      totalUnit: ' EOS',
+      balance: stakeRsn.toFixed(4),
+      unit: ' RSN',
+      total: totalRsn,
+      totalUnit: ' RSN',
       color: 'bg-c-blue',
       icon: 'ti-reload'
     }
 
-    const refundEosBalance = {
+    const refundRsnBalance = {
       title: 'Refund',
       subTitle: 'Total',
-      balance: refundEos,
-      unit: ' EOS',
-      total: totalEos,
-      totalUnit: ' EOS',
+      balance: refundRsn,
+      unit: ' RSN',
+      total: totalRsn,
+      totalUnit: ' RSN',
       color: 'bg-c-green',
       icon: 'ti-money'
     }
@@ -111,7 +111,7 @@ class MyAccountView extends Component {
       title: 'Cpu Staked',
       subTitle: 'Cpu max',
       balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.cpu_weight : 0,
-      unit: ' EOS',
+      unit: ' RSN',
       total: accountStore.accountInfo ? accountStore.accountInfo.cpu_limit.max : 0,
       totalUnit: ' µs',
       color: 'bg-c-green',
@@ -122,7 +122,7 @@ class MyAccountView extends Component {
       title: 'Net Staked',
       subTitle: 'Net max',
       balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.net_weight : 0,
-      unit: ' EOS',
+      unit: ' RSN',
       total: accountStore.accountInfo ? accountStore.accountInfo.net_limit.max : 0,
       totalUnit: ' bytes',
       color: 'bg-c-blue',
@@ -140,14 +140,14 @@ class MyAccountView extends Component {
       color: 'green'
     }
 
-    const eosResource = {
-      title: 'EOS Available',
+    const rsnResource = {
+      title: 'RSN Available',
       fixed: 4,
-      available: unstakeEos,
-      unit: ' EOS',
-      used: stakeEos,
-      max: Number(totalEos),
-      usageRate: usageEosRate,
+      available: unstakeRsn,
+      unit: ' RSN',
+      used: stakeRsn,
+      max: Number(totalRsn),
+      usageRate: usageRsnRate,
       color: 'pink'
     }
 
@@ -173,7 +173,7 @@ class MyAccountView extends Component {
       color: 'yellow'
     }
 
-    const img_path = '/images/eos-symbol.png'
+    const img_path = '/images/rsn-symbol.png'
 
     return (
       <div className="page-wrapper">
@@ -194,7 +194,7 @@ class MyAccountView extends Component {
                           <img
                             src={img_path}
                             className="img-radius"
-                            alt="EOS Logo"
+                            alt="RSN Logo"
                             style={{ width: '100px', height: '100px' }}
                           />
                         </div>
@@ -215,7 +215,7 @@ class MyAccountView extends Component {
                             value={explorerStore.account.total.toFixed(4)}
                             displayType={'text'}
                             thousandSeparator={true}
-                            suffix={' EOS'}
+                            suffix={' RSN'}
                           />
                         </p>
                         <div className="bg-c-blue counter-block p-15" style={{ height: '58px' }}>
@@ -227,7 +227,7 @@ class MyAccountView extends Component {
                                   value={explorerStore.account.unstake.toFixed(4)}
                                   displayType={'text'}
                                   thousandSeparator={true}
-                                  suffix={' EOS'}
+                                  suffix={' RSN'}
                                 />
                               </p>
                             </div>
@@ -238,7 +238,7 @@ class MyAccountView extends Component {
                                   value={explorerStore.account.stake.toFixed(4)}
                                   displayType={'text'}
                                   thousandSeparator={true}
-                                  suffix={' EOS'}
+                                  suffix={' RSN'}
                                 />
                               </p>
                             </div>
@@ -249,7 +249,7 @@ class MyAccountView extends Component {
                                   value={explorerStore.account.refund.toFixed(4)}
                                   displayType={'text'}
                                   thousandSeparator={true}
-                                  suffix={' EOS'}
+                                  suffix={' RSN'}
                                 />
                               </p>
                             </div>
@@ -261,7 +261,7 @@ class MyAccountView extends Component {
                 )}
 
               <div className="col-lg-6 col-md-12 col-xl-4">
-                <UsageResourceView resource={eosResource} />
+                <UsageResourceView resource={rsnResource} />
                 <UsageResourceView resource={cpuResource} />
               </div>
               <div className="col-lg-6 col-md-12 col-xl-4">
@@ -284,9 +284,9 @@ export default MyAccountView
     <div className="page-wrapper">
       <div className="page-body">
         <div className="row">
-          <BalanceView balance={eosBalance} />
-          <BalanceView balance={stakedEosBalance} />
-          <BalanceView balance={refundEosBalance} />
+          <BalanceView balance={rsnBalance} />
+          <BalanceView balance={stakedRsnBalance} />
+          <BalanceView balance={refundRsnBalance} />
         </div>
         <div className="row">
           <BalanceView balance={ramOwned} />

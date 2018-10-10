@@ -20,7 +20,7 @@ class MyVotecastView extends Component {
   voteProducer = async () => {
     Swal({
       title: 'Vote',
-      text: 'By completing this transaction, I agree to the EOS constitution',
+      text: 'By completing this transaction, I agree to the Arisen Constitution',
       showCancelButton: true,
       confirmButtonText: 'Comfirm',
       showLoaderOnConfirm: true,

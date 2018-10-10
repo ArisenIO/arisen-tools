@@ -1,6 +1,6 @@
 import { decorate, observable, action } from 'mobx'
 import * as Values from '../constants/Values'
-import EosAgent from '../EosAgent'
+import RsnAgent from '../RsnAgent'
 
 export class AccountStore {
   isLogin = false
@@ -8,10 +8,10 @@ export class AccountStore {
   isRAMpurchaseValid = true
   isRAMsellValid = true
   receiverAccountNameInput = ''
-  isEosUnit = false
+  isRsnUnit = false
   ramSellInput = Values.SEED_RAM_BYTES
   memoInput = ''
-  eosBalance = 0.0
+  rsnBalance = 0.0
   totalBalance = 0.0
   totalRefund = 0.0
   staked = 0.0
@@ -39,7 +39,7 @@ export class AccountStore {
   loadAccountInfo = async () => {
     let accountInfo, balance
 
-    accountInfo = await EosAgent.getAccountInfo()
+    accountInfo = await RsnAgent.getAccountInfo()
 
     if (accountInfo) {
       this.liquid = accountInfo.core_liquid_balance
@@ -75,22 +75,22 @@ export class AccountStore {
         this.proxy = accountInfo.voter_info.proxy
       }
 
-      this.account = EosAgent.loginaccount
+      this.account = RsnAgent.loginaccount
 
       if (this.account) {
         this.isLogin = true
       }
 
-      balance = await EosAgent.getCurrencyBalance({
-        code: 'eosio.token',
+      balance = await RsnAgent.getCurrencyBalance({
+        code: 'arisen.token',
         account: this.account.name,
-        symbol: 'EOS'
+        symbol: 'RSN'
       })
 
       if (balance && balance.length > 0) {
-        this.eosBalance = balance[0].split(' ')[0]
+        this.rsnBalance = balance[0].split(' ')[0]
       } else {
-        this.eosBalance = 0.0
+        this.rsnBalance = 0.0
       }
 
       this.accountInfo = accountInfo
@@ -98,7 +98,7 @@ export class AccountStore {
   }
 
   login = async () => {
-    let account = await EosAgent.loginWithScatter()
+    let account = await RsnAgent.loginWithScatter()
 
     if (account) {
       this.account = account
@@ -109,7 +109,7 @@ export class AccountStore {
   }
 
   logout = async () => {
-    await EosAgent.logout()
+    await RsnAgent.logout()
 
     this.isLogin = false
     this.account = null
@@ -152,15 +152,15 @@ export class AccountStore {
         {
           from: this.account.name,
           receiver: accountName,
-          stake_net_quantity: Number(netStake).toFixed(4) + ' EOS',
-          stake_cpu_quantity: Number(cpuStake).toFixed(4) + ' EOS',
+          stake_net_quantity: Number(netStake).toFixed(4) + ' RSN',
+          stake_cpu_quantity: Number(cpuStake).toFixed(4) + ' RSN',
           transfer: 0
         },
         options
       )
     }
 
-    await EosAgent.createTransaction(cb)
+    await RsnAgent.createTransaction(cb)
   }
 
   updateMyBlockProducers = (name, include) => {
@@ -199,8 +199,8 @@ export class AccountStore {
     return {
       from: delegator,
       receiver,
-      stake_net_quantity: `${stakeNetAmount.toFixed(4)} EOS`,
-      stake_cpu_quantity: `${stakeCpuAmount.toFixed(4)} EOS`,
+      stake_net_quantity: `${stakeNetAmount.toFixed(4)} RSN`,
+      stake_cpu_quantity: `${stakeCpuAmount.toFixed(4)} RSN`,
       transfer: 0
     }
   }
@@ -212,8 +212,8 @@ export class AccountStore {
     return {
       from: delegator,
       receiver,
-      unstake_net_quantity: `${unstakeNetAmount.toFixed(4)} EOS`,
-      unstake_cpu_quantity: `${unstakeCpuAmount.toFixed(4)} EOS`,
+      unstake_net_quantity: `${unstakeNetAmount.toFixed(4)} RSN`,
+      unstake_cpu_quantity: `${unstakeCpuAmount.toFixed(4)} RSN`,
       transfer: 0
     }
   }
@@ -266,23 +266,23 @@ export class AccountStore {
       }
     }
 
-    return await EosAgent.createTransaction(cb)
+    return await RsnAgent.createTransaction(cb)
   }
 
   getAccountTokens = async accountName => {
-    const lastAction = await EosAgent.getActions(accountName, -1, -1)
+    const lastAction = await RsnAgent.getActions(accountName, -1, -1)
     let totalActions
     let tokens = []
     let tokenSymbols = [
       {
-        code: 'eosio.token',
+        code: 'arisen.token',
         account: accountName,
-        symbol: 'EOS'
+        symbol: 'RSN'
       }
     ]
 
-    let eosToken = await EosAgent.getCurrencyBalance(tokenSymbols[0])
-    tokens = tokens.concat(eosToken)
+    let rsnToken = await RsnAgent.getCurrencyBalance(tokenSymbols[0])
+    tokens = tokens.concat(rsnToken)
 
     if (lastAction && lastAction.actions.length > 0) {
       totalActions = lastAction.actions[0].account_action_seq
@@ -298,14 +298,14 @@ export class AccountStore {
         let pos = i * Values.actionPerPage
         let offset = Values.actionPerPage - 1
 
-        const actions = await EosAgent.getActions(accountName, pos, offset)
+        const actions = await RsnAgent.getActions(accountName, pos, offset)
 
         let results = actions.actions
           .filter((action, idx, array) => {
             if (
               action.action_trace.act.name === 'transfer' &&
               action.action_trace.act.data.to === accountName &&
-              action.action_trace.act.data.quantity.split(' ')[1] !== 'EOS'
+              action.action_trace.act.data.quantity.split(' ')[1] !== 'RSN'
             ) {
               return true
             }
@@ -329,7 +329,7 @@ export class AccountStore {
 
       for (let i = 0; i < len; i++) {
         try {
-          let token = await EosAgent.getCurrencyBalance(tempTokenSymbols[i])
+          let token = await RsnAgent.getCurrencyBalance(tempTokenSymbols[i])
           tempTokens = tempTokens.concat(token)
         } catch (e) {}
       }
@@ -378,19 +378,19 @@ export class AccountStore {
     return newVal > 0 ? true : false
   }
 
-  changeRamPurchaseUnit = isEosUnit => {
-    if (isEosUnit === true) {
-      this.ramPurchaseInput = Values.SEED_RAM_EOS
+  changeRamPurchaseUnit = isRsnUnit => {
+    if (isRsnUnit === true) {
+      this.ramPurchaseInput = Values.SEED_RAM_RSN
     } else {
       this.ramPurchaseInput = Values.SEED_RAM_BYTES
     }
 
-    this.isEosUnit = isEosUnit
+    this.isRsnUnit = isRsnUnit
   }
 
-  buyRAM = async (isEosUnit, receiverAccountName, ramPurchase) => {
-    return isEosUnit
-      ? await this.buyRAMEos(receiverAccountName, ramPurchase)
+  buyRAM = async (isRsnUnit, receiverAccountName, ramPurchase) => {
+    return isRsnUnit
+      ? await this.buyRAMRsn(receiverAccountName, ramPurchase)
       : await this.buyRAMBytes(receiverAccountName, ramPurchase)
   }
 
@@ -411,10 +411,10 @@ export class AccountStore {
       )
     }
 
-    return await EosAgent.createTransaction(cb)
+    return await RsnAgent.createTransaction(cb)
   }
 
-  buyRAMEos = async (receiverAccountName, ramPurchase) => {
+  buyRAMRsn = async (receiverAccountName, ramPurchase) => {
     if (!this.account) {
       return
     }
@@ -428,13 +428,13 @@ export class AccountStore {
           receiver: receiverAccountName,
           quant: `${Number(ramPurchase)
             .toFixed(4)
-            .toString()} EOS`
+            .toString()} RSN`
         },
         options
       )
     }
 
-    return await EosAgent.createTransaction(cb)
+    return await RsnAgent.createTransaction(cb)
   }
 
   buyRAMBytes = async (receiverAccountName, ramPurchase) => {
@@ -451,7 +451,7 @@ export class AccountStore {
       )
     }
 
-    return await EosAgent.createTransaction(cb)
+    return await RsnAgent.createTransaction(cb)
   }
 
   transferToken = async (toAccountName, symbol, quantity, memo) => {
@@ -480,19 +480,19 @@ export class AccountStore {
       )
     }
 
-    return await EosAgent.createTransactionWithContract(contract, cb)
+    return await RsnAgent.createTransactionWithContract(contract, cb)
   }
 
   voteProducer = async (proxy = '') => {
     if (!proxy) {
-      return await EosAgent.voteProducer(this.account.name, this.myBlockProducers, proxy)
+      return await RsnAgent.voteProducer(this.account.name, this.myBlockProducers, proxy)
     } else {
-      return await EosAgent.voteProducer(this.account.name, [], proxy)
+      return await RsnAgent.voteProducer(this.account.name, [], proxy)
     }
   }
 
   changeVoterProxy = async () => {
-    return await EosAgent.voteProducer(this.account.name, [], '')
+    return await RsnAgent.voteProducer(this.account.name, [], '')
   }
 }
 
@@ -502,10 +502,10 @@ decorate(AccountStore, {
   isRAMpurchaseValid: observable,
   isRAMsellValid: observable,
   isMemoValid: observable,
-  isEosUnit: observable,
+  isRsnUnit: observable,
   receiverAccountNameInput: observable,
   ramSellInput: observable,
-  eosBalance: observable,
+  rsnBalance: observable,
   totalBalance: observable,
   totalRefund: observable,
   staked: observable,

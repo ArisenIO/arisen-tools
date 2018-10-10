@@ -37,7 +37,7 @@ class Donation extends Component {
                         </p>
                         <p class="text-inverse text-left">
                           <b>
-                            <FormattedMessage id="EOSUITE TEAM" />
+                            <FormattedMessage id="ARISEN TOOLS TEAM" />
                           </b>
                         </p>
                       </div>

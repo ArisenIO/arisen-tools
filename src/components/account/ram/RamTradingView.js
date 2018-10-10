@@ -13,28 +13,28 @@ class RamTradingView extends Component {
       isReceiverAccountValid: false,
       isRAMpurchaseValid: false,
       isRAMsellValid: false,
-      isEosUnit: true,
+      isRsnUnit: true,
       receiverAccountNameInput: '',
-      ramPurchaseInput: Values.SEED_RAM_EOS,
+      ramPurchaseInput: Values.SEED_RAM_RSN,
       ramSellInput: 0.0
     }
   }
 
   changeRamPurchaseUnit = name => event => {
     let ramPurchaseInput
-    let isEosUnit
+    let isRsnUnit
 
-    if (name === 'eosunit') {
-      ramPurchaseInput = Values.SEED_RAM_EOS
-      isEosUnit = true
+    if (name === 'rsnunit') {
+      ramPurchaseInput = Values.SEED_RAM_RSN
+      isRsnUnit = true
     } else if (name === 'bytesunit') {
       ramPurchaseInput = Values.SEED_RAM_BYTES
-      isEosUnit = false
+      isRsnUnit = false
     }
 
     this.setState({
       ramPurchaseInput,
-      isEosUnit
+      isRsnUnit
     })
   }
 
@@ -63,18 +63,18 @@ class RamTradingView extends Component {
   buyRam = () => {
     const { accountStore } = this.props
     if (!accountStore || !accountStore.account || !accountStore.accountInfo) return
-    const { isEosUnit, receiverAccountNameInput, ramPurchaseInput } = this.state
+    const { isRsnUnit, receiverAccountNameInput, ramPurchaseInput } = this.state
 
     Swal({
       title: 'Buy RAM',
       text:
-        'By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract.',
+        'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.',
       showCancelButton: true,
       confirmButtonText: 'Comfirm',
       showLoaderOnConfirm: true,
       preConfirm: () => {
         return accountStore
-          .buyRAM(isEosUnit, receiverAccountNameInput, ramPurchaseInput)
+          .buyRAM(isRsnUnit, receiverAccountNameInput, ramPurchaseInput)
           .then(async response => {
             await accountStore.loadAccountInfo()
             return response
@@ -113,7 +113,7 @@ class RamTradingView extends Component {
     Swal({
       title: 'Sell RAM',
       text:
-        'By executing this action you are agreeing to the EOS constitution and this actions associated ricardian contract.',
+        'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.',
       showCancelButton: true,
       confirmButtonText: 'Comfirm',
       showLoaderOnConfirm: true,
@@ -154,7 +154,7 @@ class RamTradingView extends Component {
   render() {
     const {
       isReceiverAccountValid,
-      isEosUnit,
+      isRsnUnit,
       isRAMpurchaseValid,
       isRAMsellValid,
       receiverAccountNameInput,
@@ -162,7 +162,7 @@ class RamTradingView extends Component {
       ramSellInput
     } = this.state
 
-    const ramPurchaseUnitString = isEosUnit ? 'RAM purchase (in EOS)' : 'RAM purchase (in bytes)'
+    const ramPurchaseUnitString = isRsnUnit ? 'RAM purchase (in RSN)' : 'RAM purchase (in bytes)'
     const receiverAccountNameForm = isReceiverAccountValid
       ? 'form-group row'
       : 'form-group has-danger row'
@@ -221,10 +221,10 @@ class RamTradingView extends Component {
                           <input
                             type="radio"
                             name="radio"
-                            checked={isEosUnit}
-                            onChange={this.changeRamPurchaseUnit('eosunit')}
+                            checked={isRsnUnit}
+                            onChange={this.changeRamPurchaseUnit('rsnunit')}
                           />
-                          <i className="helper" />EOS
+                          <i className="helper" />RSN
                         </label>
                       </div>
                       <div className="radio radio-inline">

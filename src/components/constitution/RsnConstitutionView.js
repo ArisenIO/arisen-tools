@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 
-class EosConstitutionView extends Component {
+class RsnConstitutionView extends Component {
   render() {
     return (
       <div className="col-sm-12">
@@ -138,4 +138,4 @@ class EosConstitutionView extends Component {
   }
 }
 
-export default EosConstitutionView
+export default RsnConstitutionView

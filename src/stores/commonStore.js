@@ -4,20 +4,20 @@ import Swal from 'sweetalert2'
 
 export class CommonStore {
   isLoading = true
-  _initilizedScatter = false
-  _initilizedEos = false
+  _initilizedArkId = false
+  _initilizedRsn = false
   coinMarketCap = null
 
   setLoading = isLoading => {
     this.isLoading = isLoading
   }
 
-  initScatter = isInit => {
-    this._initilizedScatter = isInit
+  initArkId = isInit => {
+    this._initilizedArkId = isInit
   }
 
-  initEos = isInit => {
-    this._initilizedEos = isInit
+  initRsn = isInit => {
+    this._initilizedRsn = isInit
   }
 
   getCoinMarketCap = async () => {
@@ -36,21 +36,21 @@ export class CommonStore {
     Swal({
       type: 'error',
       title: 'Oops...',
-      text: 'You need to login with Scatter wallet!',
-      footer: '<a href="https://get-scatter.com/">Do you need scatter?</a>'
+      text: 'You need to login with ArkId wallet!',
+      footer: '<a href="https://arkid.io/">Do you need ArkId?</a>'
     })
   }
 }
 
 decorate(CommonStore, {
   isLoading: observable,
-  _initilizedScatter: observable,
-  _initilizedEos: observable,
+  _initilizedArkId: observable,
+  _initilizedRsn: observable,
   coinMarketCap: observable,
   ramMarketCap: observable,
   setLoading: action,
-  initScatter: action,
-  initEos: action,
+  initArkId: action,
+  initRsn: action,
   getCoinMarketCap: action,
   scatterNeededAlert: action
 })
