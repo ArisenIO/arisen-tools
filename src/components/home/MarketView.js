@@ -63,7 +63,7 @@ class MarketView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">/ EOS</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">/ RSN</p>
                     </div>
                     <div className="row ">
                       <div className="col-sm-6 ">
@@ -110,11 +110,11 @@ class MarketView extends Component {
                           <span className="text-muted">
                             <NumberFormat
                               value={Number(
-                                this.arisenStore.currencyStats.EOS.supply.replace('EOS', '')
+                                this.arisenStore.currencyStats.RSN.supply.replace('RSN', '')
                               ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
-                              suffix={' EOS'}
+                              suffix={' RSN'}
                             />
                           </span>
                         </div>
@@ -125,11 +125,11 @@ class MarketView extends Component {
                           <span className="text-muted">
                             <NumberFormat
                               value={Number(
-                                this.arisenStore.currencyStats.EOS.max_supply.replace('EOS', '')
+                                this.arisenStore.currencyStats.RSN.max_supply.replace('RSN', '')
                               ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
-                              suffix={' EOS'}
+                              suffix={' RSN'}
                             />
                           </span>
                         </div>
@@ -157,7 +157,7 @@ class MarketView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">EOS/KB</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">RSN/KB</p>
                     </div>
                     <div className="row ">
                       <div className="col-sm-6 ">
@@ -177,13 +177,13 @@ class MarketView extends Component {
                       <div className="col-sm-6 ">
                         <h3 className="text-muted d-inline-block">
                           <NumberFormat
-                            value={this.arisenStore.ramInfo.eos.toFixed(0)}
+                            value={this.arisenStore.ramInfo.rsn.toFixed(0)}
                             displayType={'text'}
                             thousandSeparator={true}
                           />
                         </h3>
                         <div className="d-inline-block m-l-5">
-                          <p className=" m-b-0 f-w-400 f-12 text-uppercase">EOS</p>
+                          <p className=" m-b-0 f-w-400 f-12 text-uppercase">RSN</p>
                         </div>
                       </div>
                     </div>

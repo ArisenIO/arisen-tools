@@ -177,7 +177,7 @@ class CreateAccountView extends Component {
       ? 'form-group row'
       : 'form-group has-danger row'
 
-    const usageEosRate = (staked / totalBalance) * 100
+    const usageRsnRate = (staked / totalBalance) * 100
 
     console.log(totalBalance)
     const rsnResource = {
@@ -187,7 +187,7 @@ class CreateAccountView extends Component {
       unit: ' RSN',
       used: staked,
       max: totalBalance,
-      usageRate: usageEosRate,
+      usageRate: usageRsnRate,
       color: 'pink'
     }
 
