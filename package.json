@@ -8,7 +8,7 @@
     "@vx/group": "^0.0.170",
     "@vx/scale": "^0.0.165",
     "@vx/shape": "^0.0.170",
-    "arisenjs": "~1.0.0",
+    "arisenjsv1": "~1.0.0",
     "arisenjs-ecc": "~1.0.0",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",

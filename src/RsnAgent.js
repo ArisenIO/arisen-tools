@@ -1,5 +1,5 @@
 import * as Values from './constants/Values'
-import Rsn from 'arisenjs'
+import Rsn from 'arisenjsv1'
 
 const singleton = Symbol()
 const singletonRsnAgent = Symbol()
