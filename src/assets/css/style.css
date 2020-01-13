@@ -7127,7 +7127,7 @@ table tbody .border-bottom-info td {
 .header-navbar .navbar-wrapper .navbar-logo .mobile-menu {
   position: absolute;
   right: 22px;
-  top: calc(50% - 8px);
+  top: calc(50% - 10px);
   font-size: 16px;
 }
 @media only screen and (max-width: 768px) {
@@ -21225,6 +21225,9 @@ span.value {
 
   .widget-card-user .card-user {
     text-align: center;
+  }
+  header .logo-arisen {
+    width: 40px;
   }
 }
 @media only screen and (min-width: 992px) {

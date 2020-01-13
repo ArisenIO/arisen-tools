@@ -32,6 +32,17 @@ export class CommonStore {
     }
   }
 
+  getMarketCapPrice = async () => {
+    try {
+      let price = await ApiAgent.getMarketCapPrice()
+      if(price) {
+        this.getMarketCapPrice = price.data
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   arkidNeededAlert = () => {
     Swal({
       type: 'error',
@@ -52,6 +63,7 @@ decorate(CommonStore, {
   initArkId: action,
   initRsn: action,
   getCoinMarketCap: action,
+  getMarketCapPrice: action,
   arkidNeededAlert: action
 })
 

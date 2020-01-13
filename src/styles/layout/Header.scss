@@ -1,3 +1,17 @@
 header {
   color: white;
+
+  h5 {
+    display: flex;
+    
+    span {
+      align-self: center;
+    }
+  }
+
+  .logo-arisen {
+    width: 40px;
+  }
 }
+
+

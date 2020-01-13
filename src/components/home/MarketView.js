@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl'
 
 @inject('arisenStore', 'commonStore')
 @observer
+
 class MarketView extends Component {
   constructor(props) {
     super(props)
@@ -17,6 +18,7 @@ class MarketView extends Component {
     await this.commonStore.getCoinMarketCap()
     await this.arisenStore.getGlobalInfo()
     await this.arisenStore.getCurrencyStats()
+    await this.commonStore.getMarketCapPrice()
     this.update()
 
     this.intervalId = setInterval(this.update, 1500)
@@ -55,7 +57,7 @@ class MarketView extends Component {
                   <div className="card-block-big ">
                     <h2 className="text-c-green d-inline-block m-b-40 f-40 ">
                       <NumberFormat
-                        value={this.commonStore.coinMarketCap.data.quotes.USD.price.toFixed(4)}
+                        value={this.commonStore.getMarketCapPrice.data.USD.price.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
                         prefix={'$'}
@@ -69,9 +71,9 @@ class MarketView extends Component {
                       <div className="col-sm-6 ">
                         <h3 className="text-muted d-inline-block">
                           <NumberFormat
-                            value={this.commonStore.coinMarketCap.data.quotes.USD.market_cap.toFixed(
-                              0
-                            )}
+                            // value={this.commonStore.coinMarketCap.data.quotes.USD.market_cap.toFixed(
+                            //   0
+                            // )}
                             displayType={'text'}
                             thousandSeparator={true}
                             prefix={'$'}
@@ -86,9 +88,9 @@ class MarketView extends Component {
                       <div className="col-sm-6 ">
                         <h3 className="text-muted d-inline-block">
                           <NumberFormat
-                            value={this.commonStore.coinMarketCap.data.quotes.USD.volume_24h.toFixed(
-                              0
-                            )}
+                            // value={this.commonStore.coinMarketCap.data.quotes.USD.volume_24h.toFixed(
+                            //   0
+                            // )}
                             displayType={'text'}
                             thousandSeparator={true}
                             prefix={'$'}
@@ -109,9 +111,9 @@ class MarketView extends Component {
                           </p>
                           <span className="text-muted">
                             <NumberFormat
-                              value={Number(
-                                this.arisenStore.currencyStats.RSN.supply.replace('RSN', '')
-                              ).toFixed(0)}
+                              // value={Number(
+                              //   this.arisenStore.currencyStats.RSN.supply.replace('RSN', '')
+                              // ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
                               suffix={' RSN'}
@@ -124,9 +126,9 @@ class MarketView extends Component {
                           </p>
                           <span className="text-muted">
                             <NumberFormat
-                              value={Number(
-                                this.arisenStore.currencyStats.RSN.max_supply.replace('RSN', '')
-                              ).toFixed(0)}
+                              // value={Number(
+                              //   this.arisenStore.currencyStats.RSN.max_supply.replace('RSN', '')
+                              // ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
                               suffix={' RSN'}
