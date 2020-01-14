@@ -30,7 +30,6 @@ class Nav extends Component {
       <nav className="pcoded-navbar">
         <div className="pcoded-inner-navbar main-menu">
           <div className="pcoded-navigation-label">
-            <FormattedMessage id="function" />
           </div>
 
           <ul className="pcoded-item pcoded-left-item">
