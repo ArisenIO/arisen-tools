@@ -9,7 +9,7 @@ export const actionPerPage = 1000
 const protocol = 'https'
 const host = 'greatchain.arisennodes.io'
 const port = 443
-const chainId = 'fffa80dc4492fedaa90cbc4ee6f5520568826dfb31ed9c8c161224349f6b82f5'
+const chainId = '136ce1b8190928711b8bb50fcae6c22fb620fd2c340d760873cf8f7ec3aba2b3'
 
 // export const protocol = 'http';
 // export const host = '127.0.0.1';
