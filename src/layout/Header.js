@@ -17,7 +17,7 @@ class Header extends Component {
             <header>
               <Link to="/">
                 <h5>
-                  <img className="logo-arisen" src="/assets/images/arisenLogo.png"/>
+                  <img className="logo-arisen" alt='log-arisen' src="/assets/images/arisenLogo.png"/>
                   <FormattedMessage id="ArisenTools" />
                 </h5>
               </Link>

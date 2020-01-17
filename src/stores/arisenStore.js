@@ -193,7 +193,7 @@ export class ArisenStore {
       limit: 1000
     }
 
-    let voters = await RsnAgent.getTableRows(query)
+    /**let voters = */await RsnAgent.getTableRows(query)
   }
 
   getNameBids = async () => {

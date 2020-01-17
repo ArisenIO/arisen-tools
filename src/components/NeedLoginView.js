@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { inject } from 'mobx-react'
 import '../styles/components/NeedLoginView.scss'
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2' {defined never used}
 
 @inject('accountStore', 'commonStore')
 class NeedLoginView extends Component {

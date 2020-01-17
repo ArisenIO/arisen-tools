@@ -57,7 +57,7 @@ class MarketView extends Component {
                   <div className="card-block-big ">
                     <h2 className="text-c-green d-inline-block m-b-40 f-40 ">
                       <NumberFormat
-                        value={ this.commonStore.getMarketCapPrice.data.USD.price ? this.commonStore.getMarketCapPrice.data.USD.price.toFixed(4): '-' }
+                        value={ this.commonStore.getMarketCapPrice.data !== undefined ? this.commonStore.getMarketCapPrice.data.USD.price.toFixed(4): '-' }
                         displayType={'text'}
                         thousandSeparator={true}
                         prefix={'$'}

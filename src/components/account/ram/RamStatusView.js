@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FormattedMessage } from 'react-intl'
+// import { FormattedMessage } from 'react-intl' /**Define but never used */
 import UsageResourceView from '../../UsageResourceView'
 import { inject, observer } from '../../../../node_modules/mobx-react'
 

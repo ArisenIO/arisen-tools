@@ -178,7 +178,7 @@ export class ExplorerStore {
       await this.getActions(accountName)
     }
 
-    let results = this.actions
+    /**let results = */ this.actions
       .filter((action, idx, array) => {
         if (action.action_trace.act.name === 'voteproducer') {
           return true

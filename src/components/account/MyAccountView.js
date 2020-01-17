@@ -63,71 +63,71 @@ class MyAccountView extends Component {
     const ramAvailable = ramMax - ramUsed
     const usageRamRate = ramMax > 0 ? (ramUsed / ramMax) * 100 : 0
 
-    const rsnBalance = {
-      title: 'Balance',
-      subTitle: 'Total',
-      balance: accountStore.rsnBalance ? accountStore.rsnBalance : 0,
-      unit: ' RSN',
-      total: totalRsn,
-      totalUnit: ' RSN',
-      color: 'bg-c-pink',
-      icon: 'ti-wallet'
-    }
+    // const rsnBalance = {
+    //   title: 'Balance',
+    //   subTitle: 'Total',
+    //   balance: accountStore.rsnBalance ? accountStore.rsnBalance : 0,
+    //   unit: ' RSN',
+    //   total: totalRsn,
+    //   totalUnit: ' RSN',
+    //   color: 'bg-c-pink',
+    //   icon: 'ti-wallet'
+    // }
 
-    const stakedRsnBalance = {
-      title: 'Staked',
-      subTitle: 'Total',
-      balance: stakeRsn.toFixed(4),
-      unit: ' RSN',
-      total: totalRsn,
-      totalUnit: ' RSN',
-      color: 'bg-c-blue',
-      icon: 'ti-reload'
-    }
+    // const stakedRsnBalance = {
+    //   title: 'Staked',
+    //   subTitle: 'Total',
+    //   balance: stakeRsn.toFixed(4),
+    //   unit: ' RSN',
+    //   total: totalRsn,
+    //   totalUnit: ' RSN',
+    //   color: 'bg-c-blue',
+    //   icon: 'ti-reload'
+    // }
 
-    const refundRsnBalance = {
-      title: 'Refund',
-      subTitle: 'Total',
-      balance: refundRsn,
-      unit: ' RSN',
-      total: totalRsn,
-      totalUnit: ' RSN',
-      color: 'bg-c-green',
-      icon: 'ti-money'
-    }
+    // const refundRsnBalance = {
+    //   title: 'Refund',
+    //   subTitle: 'Total',
+    //   balance: refundRsn,
+    //   unit: ' RSN',
+    //   total: totalRsn,
+    //   totalUnit: ' RSN',
+    //   color: 'bg-c-green',
+    //   icon: 'ti-money'
+    // }
 
-    const ramOwned = {
-      title: 'Ram owned',
-      subTitle: 'Ram usage',
-      balance: accountStore.accountInfo ? accountStore.accountInfo.ram_quota : 0,
-      unit: ' bytes',
-      total: accountStore.accountInfo ? accountStore.accountInfo.ram_usage : 0,
-      totalUnit: ' bytes',
-      color: 'bg-c-yellow',
-      icon: 'ti-save'
-    }
+    // const ramOwned = {
+    //   title: 'Ram owned',
+    //   subTitle: 'Ram usage',
+    //   balance: accountStore.accountInfo ? accountStore.accountInfo.ram_quota : 0,
+    //   unit: ' bytes',
+    //   total: accountStore.accountInfo ? accountStore.accountInfo.ram_usage : 0,
+    //   totalUnit: ' bytes',
+    //   color: 'bg-c-yellow',
+    //   icon: 'ti-save'
+    // }
 
-    const cpuStake = {
-      title: 'Cpu Staked',
-      subTitle: 'Cpu max',
-      balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.cpu_weight : 0,
-      unit: ' RSN',
-      total: accountStore.accountInfo ? accountStore.accountInfo.cpu_limit.max : 0,
-      totalUnit: ' µs',
-      color: 'bg-c-green',
-      icon: 'ti-pulse'
-    }
+    // const cpuStake = {
+    //   title: 'Cpu Staked',
+    //   subTitle: 'Cpu max',
+    //   balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.cpu_weight : 0,
+    //   unit: ' RSN',
+    //   total: accountStore.accountInfo ? accountStore.accountInfo.cpu_limit.max : 0,
+    //   totalUnit: ' µs',
+    //   color: 'bg-c-green',
+    //   icon: 'ti-pulse'
+    // }
 
-    const netStake = {
-      title: 'Net Staked',
-      subTitle: 'Net max',
-      balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.net_weight : 0,
-      unit: ' RSN',
-      total: accountStore.accountInfo ? accountStore.accountInfo.net_limit.max : 0,
-      totalUnit: ' bytes',
-      color: 'bg-c-blue',
-      icon: 'ti-signal'
-    }
+    // const netStake = {
+    //   title: 'Net Staked',
+    //   subTitle: 'Net max',
+    //   balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.net_weight : 0,
+    //   unit: ' RSN',
+    //   total: accountStore.accountInfo ? accountStore.accountInfo.net_limit.max : 0,
+    //   totalUnit: ' bytes',
+    //   color: 'bg-c-blue',
+    //   icon: 'ti-signal'
+    // }
 
     const cpuResource = {
       title: 'CPU Available',
@@ -278,23 +278,22 @@ class MyAccountView extends Component {
 
 export default MyAccountView
 
-{
-  /* <Fragment>
-  <div className="main-body">
-    <div className="page-wrapper">
-      <div className="page-body">
-        <div className="row">
-          <BalanceView balance={rsnBalance} />
-          <BalanceView balance={stakedRsnBalance} />
-          <BalanceView balance={refundRsnBalance} />
-        </div>
-        <div className="row">
-          <BalanceView balance={ramOwned} />
-          <BalanceView balance={cpuStake} />
-          <BalanceView balance={netStake} />
-        </div>
+
+/* <Fragment>
+<div className="main-body">
+  <div className="page-wrapper">
+    <div className="page-body">
+      <div className="row">
+        <BalanceView balance={rsnBalance} />
+        <BalanceView balance={stakedRsnBalance} />
+        <BalanceView balance={refundRsnBalance} />
+      </div>
+      <div className="row">
+        <BalanceView balance={ramOwned} />
+        <BalanceView balance={cpuStake} />
+        <BalanceView balance={netStake} />
       </div>
     </div>
   </div>
+</div>
 </Fragment> */
-}

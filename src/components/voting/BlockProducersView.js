@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { inject, observer } from '../../../node_modules/mobx-react'
-import sortBy from 'lodash/sortBy'
+// import sortBy from 'lodash/sortBy' /** Defiend but never used */
 import { FormattedMessage } from 'react-intl'
 
 @inject('arisenStore', 'accountStore')

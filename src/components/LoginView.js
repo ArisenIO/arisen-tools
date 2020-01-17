@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
 import { FormattedMessage } from 'react-intl'
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2' {defind but never used}
 
 @inject('accountStore', 'commonStore')
 @observer

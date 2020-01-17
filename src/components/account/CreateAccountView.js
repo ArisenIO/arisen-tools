@@ -156,7 +156,7 @@ class CreateAccountView extends Component {
       cpuStakeInput,
       netStakeInput,
       ramPurchaseInput,
-      transferInput
+      // transferInput /**Error Never Used */
     } = this.state
 
     const { liquid, staked, totalBalance } = accountStore

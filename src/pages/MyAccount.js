@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { inject, observer } from 'mobx-react'
 import MyAccountView from '../components/account/MyAccountView'
-import ResourceView from '../components/account/ResourceView'
+// import ResourceView from '../components/account/ResourceView'  {defined but never used}
 import ActionView from '../components/account/ActionView'
 import NeedLoginView from '../components/NeedLoginView'
 

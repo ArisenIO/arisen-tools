@@ -23,6 +23,7 @@ class Donation extends Component {
                         <a
                           href="https://commerce.coinbase.com/checkout/fa41f2f6-3150-47e1-9bb6-eb79e20197ef"
                           class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20"
+                          rel="noopener noreferrer"
                           target="_blank"
                         >
                           <i class="icofont icofont-money" /> <FormattedMessage id="Donation" />{' '}
