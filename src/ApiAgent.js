@@ -7,7 +7,7 @@ class ApiAgent {
   }
 
   getMarketCapPrice = async () => {
-    let price = await axios.get('https://nv6khovry9.execute-api.us-east-1.amazonaws.com/dev/get_arisen_price')
+    let price = await axios.get('https://nv6khovry9.execute-api.us-east-1.amazonaws.com/dev/rsn_price_from_bts')
     if(price) {
       return price;
     } else {
