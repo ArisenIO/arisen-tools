@@ -7,7 +7,7 @@ export const SEED_NET = 0.1
 export const actionPerPage = 1000
 
 const protocol = 'https'
-const host = 'greatchain.arisennodes.io'
+const host = 'greatchains.arisennodes.io'
 const port = 443
 const chainId = '136ce1b8190928711b8bb50fcae6c22fb620fd2c340d760873cf8f7ec3aba2b3'
 
