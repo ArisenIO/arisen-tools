@@ -135,7 +135,7 @@ export class ArisenStore {
     let ramMarkets = await RsnAgent.getTableRows(query)
     let ramInfo = null
 
-    if (ramMarkets) {
+    if (!ramMarkets) {
       this.ramMarkets = ramMarkets.rows[0]
 
       //Bancor Algorithm
