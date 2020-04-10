@@ -9,11 +9,12 @@ class Header extends Component {
   render() {
     return (
       <nav className="navbar header-navbar pcoded-header">
-        <div style={{textAlign: 'center'}}>
+        {/**DELETE IF NOT NEED IN FUTURE */}
+        {/* <div style={{textAlign: 'center'}}>
           <span style={{color: 'white'}}>
             IMPORTANT: This blockchain explorer is for exploring Arisen`s test network. Arisen`s main network officially launches April 16th, 2020. Follow the countdown to click <a href="https://arisen.network" target='blank' style={{color: 'hotpink'}}>here</a>
           </span>
-        </div>
+        </div> */}
         <div className="navbar-wrapper">
           <div className="navbar-logo">
             <a className="mobile-menu" id="mobile-collapse" href="#!">
