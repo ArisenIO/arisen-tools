@@ -35,7 +35,7 @@ class MyResourceView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">/ RSN (Liquid)</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">/ RIX (Liquid)</p>
                     </div>
                   </div>
                 </div>
@@ -51,7 +51,7 @@ class MyResourceView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">/ RSN (Total staked)</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">/ RIX (Total staked)</p>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ class MyResourceView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">/ RSN (Cpu staked)</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">/ RIX (Cpu staked)</p>
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ class MyResourceView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">/ RSN (Net staked)</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">/ RIX (Net staked)</p>
                     </div>
                   </div>
                 </div>

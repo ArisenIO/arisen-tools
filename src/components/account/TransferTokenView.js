@@ -83,7 +83,7 @@ class TransferTokenView extends Component {
     Swal({
       title: 'Transfer Token',
       text:
-        'By executing this action you are agreeing to the RSN Constitution and this actions associated ricardian contract.',
+        'By executing this action you are agreeing to the RIX Constitution and this actions associated ricardian contract.',
       showCancelButton: true,
       confirmButtonText: 'Create',
       showLoaderOnConfirm: true,
@@ -182,7 +182,7 @@ class TransferTokenView extends Component {
                         {availableLiquid} / {this.state.tokenQuantity} {this.state.tokenSymbol}
                       </h2>
                       <p className="text-muted f-w-600 text-right">
-                        <FormattedMessage id="Available RSN (liquid)" />
+                        <FormattedMessage id="Available RIX (liquid)" />
                       </p>
 
                       <div className="progress">

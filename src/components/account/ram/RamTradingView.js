@@ -68,7 +68,7 @@ class RamTradingView extends Component {
     Swal({
       title: 'Buy RAM',
       text:
-        'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.',
+        'By executing this action you are agreeing to the RIX constitution and this actions associated ricardian contract.',
       showCancelButton: true,
       confirmButtonText: 'Comfirm',
       showLoaderOnConfirm: true,
@@ -113,7 +113,7 @@ class RamTradingView extends Component {
     Swal({
       title: 'Sell RAM',
       text:
-        'By executing this action you are agreeing to the RSN constitution and this actions associated ricardian contract.',
+        'By executing this action you are agreeing to the RIX constitution and this actions associated ricardian contract.',
       showCancelButton: true,
       confirmButtonText: 'Comfirm',
       showLoaderOnConfirm: true,
@@ -162,7 +162,7 @@ class RamTradingView extends Component {
       ramSellInput
     } = this.state
 
-    const ramPurchaseUnitString = isRsnUnit ? 'RAM purchase (in RSN)' : 'RAM purchase (in bytes)'
+    const ramPurchaseUnitString = isRsnUnit ? 'RAM purchase (in RIX)' : 'RAM purchase (in bytes)'
     const receiverAccountNameForm = isReceiverAccountValid
       ? 'form-group row'
       : 'form-group has-danger row'
@@ -224,7 +224,7 @@ class RamTradingView extends Component {
                             checked={isRsnUnit}
                             onChange={this.changeRamPurchaseUnit('rsnunit')}
                           />
-                          <i className="helper" />RSN
+                          <i className="helper" />RIX
                         </label>
                       </div>
                       <div className="radio radio-inline">

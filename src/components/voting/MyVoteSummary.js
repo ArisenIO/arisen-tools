@@ -45,7 +45,7 @@ class MyVoteSummary extends Component {
               </div>
             </div>
             <div className="col-sm-6 p-b-40">
-              <h2 className="f-w-400">{`${staked.toFixed(4)} / ${totalBalance.toFixed(4)}`} RSN</h2>
+              <h2 className="f-w-400">{`${staked.toFixed(4)} / ${totalBalance.toFixed(4)}`} RIX</h2>
               <p className="text-muted f-w-400">
                 <FormattedMessage id="Staked" />
               </p>

@@ -17,7 +17,7 @@ This project is to utilize Arisen's blockchain easily.
 ## Block Explorer
 
 - Profile
-- RSN Available
+- RIX Available
 - RAM Available
 - CPU Available
 - NET Available
@@ -42,7 +42,7 @@ This project is to utilize Arisen's blockchain easily.
 ## My Account
 
 - My Profile
-- RSN Available
+- RIX Available
 - RAM Available
 - CPU Available
 - NET Available

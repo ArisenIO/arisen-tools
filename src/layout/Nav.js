@@ -199,7 +199,7 @@ class Nav extends Component {
                     <span className="pcoded-mtext">
                       <FormattedMessage id="Ram Market" />
                     </span>
-                    <span className="pcoded-badge label label-info ">RSN</span>
+                    <span className="pcoded-badge label label-info ">RIX</span>
                     <span className="pcoded-mcaret" />
                   </Link>
                 </li>

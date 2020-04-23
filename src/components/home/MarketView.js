@@ -65,7 +65,7 @@ class MarketView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">/ RSN</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">/ RIX</p>
                     </div>
                     <div className="row ">
                       <div className="col-sm-6 ">
@@ -112,11 +112,11 @@ class MarketView extends Component {
                           <span className="text-muted">
                             <NumberFormat
                               // value={Number(
-                              //   this.arisenStore.currencyStats.RSN.supply.replace('RSN', '')
+                              //   this.arisenStore.currencyStats.RIX.supply.replace('RIX', '')
                               // ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
-                              suffix={' RSN'}
+                              suffix={' RIX'}
                             />
                           </span>
                         </div>
@@ -127,11 +127,11 @@ class MarketView extends Component {
                           <span className="text-muted">
                             <NumberFormat
                               // value={Number(
-                              //   this.arisenStore.currencyStats.RSN.max_supply.replace('RSN', '')
+                              //   this.arisenStore.currencyStats.RIX.max_supply.replace('RIX', '')
                               // ).toFixed(0)}
                               displayType={'text'}
                               thousandSeparator={true}
-                              suffix={' RSN'}
+                              suffix={' RIX'}
                             />
                           </span>
                         </div>
@@ -159,7 +159,7 @@ class MarketView extends Component {
                     </h2>
                     <div className="d-inline-block m-l-5 super ">
                       <p className="text-muted  m-b-0 f-w-400 " />
-                      <p className="text-muted  m-b-0 f-w-400 ">RSN/KB</p>
+                      <p className="text-muted  m-b-0 f-w-400 ">RIX/KB</p>
                     </div>
                     <div className="row ">
                       <div className="col-sm-6 ">
@@ -185,7 +185,7 @@ class MarketView extends Component {
                           />
                         </h3>
                         <div className="d-inline-block m-l-5">
-                          <p className=" m-b-0 f-w-400 f-12 text-uppercase">RSN</p>
+                          <p className=" m-b-0 f-w-400 f-12 text-uppercase">RIX</p>
                         </div>
                       </div>
                     </div>

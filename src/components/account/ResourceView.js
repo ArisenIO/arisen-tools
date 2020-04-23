@@ -13,22 +13,22 @@ class ResourceView extends Component {
 
   render() {
     const cpu = this.accountStore.accountInfo.total_resources
-      ? Number(this.accountStore.accountInfo.total_resources.cpu_weight.replace('RSN', ''))
+      ? Number(this.accountStore.accountInfo.total_resources.cpu_weight.replace('RIX', ''))
       : 0.0
     const net = this.accountStore.accountInfo.total_resources
-      ? Number(this.accountStore.accountInfo.total_resources.net_weight.replace('RSN', ''))
+      ? Number(this.accountStore.accountInfo.total_resources.net_weight.replace('RIX', ''))
       : 0.0
 
     const stakeRsn = cpu + net
     const unstakeRsn = this.accountStore.accountInfo.core_liquid_balance
-      ? Number(this.accountStore.accountInfo.core_liquid_balance.replace('RSN', ''))
+      ? Number(this.accountStore.accountInfo.core_liquid_balance.replace('RIX', ''))
       : 0.0
 
     const refundCpu = this.accountStore.accountInfo.refund_request
-      ? Number(this.accountStore.accountInfo.refund_request.cpu_amount.replace('RSN', ''))
+      ? Number(this.accountStore.accountInfo.refund_request.cpu_amount.replace('RIX', ''))
       : 0.0
     const refundNet = this.accountStore.accountInfo.refund_request
-      ? Number(this.accountStore.accountInfo.refund_request.net_amount.replace('RSN', ''))
+      ? Number(this.accountStore.accountInfo.refund_request.net_amount.replace('RIX', ''))
       : 0.0
 
     const refundRsn = refundCpu + refundNet
@@ -82,10 +82,10 @@ class ResourceView extends Component {
     }
 
     const rsnResource = {
-      title: 'RSN Available',
+      title: 'RIX Available',
       fixed: 4,
       available: unstakeRsn,
-      unit: ' RSN',
+      unit: ' RIX',
       used: stakeRsn,
       max: totalRsn,
       usageRate: usageRsnRate,

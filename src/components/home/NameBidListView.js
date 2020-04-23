@@ -87,7 +87,7 @@ class NameBidListView extends Component {
                     value={(n.high_bid / 10000).toFixed(4)}
                     displayType={'text'}
                     thousandSeparator={true}
-                    suffix={' RSN'}
+                    suffix={' RIX'}
                   />
                 </label>
               </div>

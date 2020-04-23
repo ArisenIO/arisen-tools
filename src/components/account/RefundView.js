@@ -72,14 +72,14 @@ class RefundView extends Component {
                     <FormattedMessage id="Claim Refund" />
                   </h5>
                   <p className="text-muted text-center m-t-20">
-                    <FormattedMessage id="By executing this action you are agreeing to the RSN Constitution and this actions associated ricardian contract." />
+                    <FormattedMessage id="By executing this action you are agreeing to the RIX Constitution and this actions associated ricardian contract." />
                   </p>
                 </div>
                 <div className="col-lg-6 offset-lg-3">
                   <div className="card-block text-center">
                     <i className="fa fa-sign-in text-c-green d-block f-40" />
                     <h4 className="m-t-20">
-                      {`${Number(accountStore.totalRefund).toFixed(4)} RSN`}
+                      {`${Number(accountStore.totalRefund).toFixed(4)} RIX`}
                     </h4>
                     <p className="m-b-20">
                       <FormattedMessage id="Unstaked amount" />

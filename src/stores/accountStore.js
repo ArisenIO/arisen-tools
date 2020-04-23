@@ -84,7 +84,7 @@ export class AccountStore {
       balance = await RsnAgent.getCurrencyBalance({
         code: 'arisen.token',
         account: this.account.name,
-        symbol: 'RSN'
+        symbol: 'RIX'
       })
 
       if (balance && balance.length > 0) {
@@ -152,8 +152,8 @@ export class AccountStore {
         {
           from: this.account.name,
           receiver: accountName,
-          stake_net_quantity: Number(netStake).toFixed(4) + ' RSN',
-          stake_cpu_quantity: Number(cpuStake).toFixed(4) + ' RSN',
+          stake_net_quantity: Number(netStake).toFixed(4) + ' RIX',
+          stake_cpu_quantity: Number(cpuStake).toFixed(4) + ' RIX',
           transfer: 0
         },
         options
@@ -199,8 +199,8 @@ export class AccountStore {
     return {
       from: delegator,
       receiver,
-      stake_net_quantity: `${stakeNetAmount.toFixed(4)} RSN`,
-      stake_cpu_quantity: `${stakeCpuAmount.toFixed(4)} RSN`,
+      stake_net_quantity: `${stakeNetAmount.toFixed(4)} RIX`,
+      stake_cpu_quantity: `${stakeCpuAmount.toFixed(4)} RIX`,
       transfer: 0
     }
   }
@@ -212,8 +212,8 @@ export class AccountStore {
     return {
       from: delegator,
       receiver,
-      unstake_net_quantity: `${unstakeNetAmount.toFixed(4)} RSN`,
-      unstake_cpu_quantity: `${unstakeCpuAmount.toFixed(4)} RSN`,
+      unstake_net_quantity: `${unstakeNetAmount.toFixed(4)} RIX`,
+      unstake_cpu_quantity: `${unstakeCpuAmount.toFixed(4)} RIX`,
       transfer: 0
     }
   }
@@ -277,7 +277,7 @@ export class AccountStore {
       {
         code: 'arisen.token',
         account: accountName,
-        symbol: 'RSN'
+        symbol: 'RIX'
       }
     ]
 
@@ -305,7 +305,7 @@ export class AccountStore {
             if (
               action.action_trace.act.name === 'transfer' &&
               action.action_trace.act.data.to === accountName &&
-              action.action_trace.act.data.quantity.split(' ')[1] !== 'RSN'
+              action.action_trace.act.data.quantity.split(' ')[1] !== 'RIX'
             ) {
               return true
             }
@@ -428,7 +428,7 @@ export class AccountStore {
           receiver: receiverAccountName,
           quant: `${Number(ramPurchase)
             .toFixed(4)
-            .toString()} RSN`
+            .toString()} RIX`
         },
         options
       )

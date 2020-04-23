@@ -181,10 +181,10 @@ class CreateAccountView extends Component {
 
     console.log(totalBalance)
     const rsnResource = {
-      title: 'RSN Available',
+      title: 'RIX Available',
       fixed: 4,
       available: liquid,
-      unit: ' RSN',
+      unit: ' RIX',
       used: staked,
       max: totalBalance,
       usageRate: usageRsnRate,
@@ -283,7 +283,7 @@ class CreateAccountView extends Component {
                 <div className={cpuStakeForm}>
                   <div className="col-sm-2">
                     <label className="col-form-label" htmlFor="cpuStakeInputDanger">
-                      <FormattedMessage id="CPU Stake (in RSN)" />
+                      <FormattedMessage id="CPU Stake (in RIX)" />
                     </label>
                   </div>
                   <div className="col-sm-10">
@@ -307,7 +307,7 @@ class CreateAccountView extends Component {
                 <div className={netStakeForm}>
                   <div className="col-sm-2">
                     <label className="col-form-label" htmlFor="netStakeInputDanger">
-                      <FormattedMessage id="NET Stake (in RSN)" />
+                      <FormattedMessage id="NET Stake (in RIX)" />
                     </label>
                   </div>
                   <div className="col-sm-10">

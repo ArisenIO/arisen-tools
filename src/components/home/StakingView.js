@@ -61,7 +61,7 @@ class StakingView extends Component {
                         value={this.arisenStore.staking.totalStake.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' RSN'}
+                        suffix={' RIX'}
                       />
                     </h6>
                   </div>
@@ -93,7 +93,7 @@ class StakingView extends Component {
                         value={this.arisenStore.staking.ramStake.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' RSN'}
+                        suffix={' RIX'}
                       />
                     </h6>
                   </div>

@@ -73,10 +73,10 @@ class AccountView extends Component {
     }
 
     const rsnResource = {
-      title: 'RSN Available',
+      title: 'RIX Available',
       fixed: 4,
       available: unstakeRsn,
-      unit: ' RSN',
+      unit: ' RIX',
       used: stakeRsn,
       max: totalRsn,
       usageRate: usageRsnRate,
@@ -121,7 +121,7 @@ class AccountView extends Component {
                 <img
                   src={img_path}
                   className="img-radius"
-                  alt="RSN Logo"
+                  alt="RIX Logo"
                   style={{ width: '100px', height: '100px' }}
                 />
               </div>
@@ -137,7 +137,7 @@ class AccountView extends Component {
                   value={this.explorerStore.account.total.toFixed(4)}
                   displayType={'text'}
                   thousandSeparator={true}
-                  suffix={' RSN'}
+                  suffix={' RIX'}
                 />
               </p>
               <div className="bg-c-blue counter-block p-15" style={{ height: '58px' }}>
@@ -149,7 +149,7 @@ class AccountView extends Component {
                         value={this.explorerStore.account.unstake.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' RSN'}
+                        suffix={' RIX'}
                       />
                     </p>
                   </div>
@@ -160,7 +160,7 @@ class AccountView extends Component {
                         value={this.explorerStore.account.stake.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' RSN'}
+                        suffix={' RIX'}
                       />
                     </p>
                   </div>
@@ -171,7 +171,7 @@ class AccountView extends Component {
                         value={this.explorerStore.account.refund.toFixed(4)}
                         displayType={'text'}
                         thousandSeparator={true}
-                        suffix={' RSN'}
+                        suffix={' RIX'}
                       />
                     </p>
                   </div>

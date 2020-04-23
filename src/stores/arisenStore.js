@@ -39,7 +39,7 @@ export class ArisenStore {
   getCurrencyStats = async () => {
     this.currencyStats = null
 
-    this.currencyStats = await RsnAgent.getCurrencyStats({ code: 'arisen.token', symbol: 'RSN' })
+    this.currencyStats = await RsnAgent.getCurrencyStats({ code: 'arisen.token', symbol: 'RIX' })
   }
 
   getBlockProducers = async () => {
@@ -61,8 +61,8 @@ export class ArisenStore {
 
     let backupMinimumPercent = false
     let tokensToProducersForVotes = false
-    const currencyStats = await RsnAgent.getCurrencyStats({ code: 'arisen.token', symbol: 'RSN' })
-    const supply = parseFloat(currencyStats.RSN.supply)
+    const currencyStats = await RsnAgent.getCurrencyStats({ code: 'arisen.token', symbol: 'RIX' })
+    const supply = parseFloat(currencyStats.RIX.supply)
     // yearly inflation
     const inflation = 0.04879
     // Tokens per year
@@ -139,9 +139,9 @@ export class ArisenStore {
       this.ramMarkets = ramMarkets.rows[0]
 
       //Bancor Algorithm
-      //RSN/BYTE =  quote_balance / (base_balance x quote_weight)
+      //RIX/BYTE =  quote_balance / (base_balance x quote_weight)
       const ram = Number(this.ramMarkets.base.balance.replace('RAM', ''))
-      const rsn = Number(this.ramMarkets.quote.balance.replace('RSN', ''))
+      const rsn = Number(this.ramMarkets.quote.balance.replace('RIX', ''))
       const weight = Number(this.ramMarkets.quote.weight)
       const bPrice = rsn / (ram * weight)
       const kbPrice = (rsn / ram) * 1024
@@ -164,7 +164,7 @@ export class ArisenStore {
         freeRamGb
       }
 
-      //{"supply":"10000000000.0000 RAMCORE","base":{"balance":"16389760351 RAM","weight":"0.50000000000000000"},"quote":{"balance":"4192901.1209 RSN","weight":"0.50000000000000000"}}
+      //{"supply":"10000000000.0000 RAMCORE","base":{"balance":"16389760351 RAM","weight":"0.50000000000000000"},"quote":{"balance":"4192901.1209 RIX","weight":"0.50000000000000000"}}
     }
 
     this.ramInfo = ramInfo

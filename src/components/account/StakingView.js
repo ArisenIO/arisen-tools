@@ -131,7 +131,7 @@ class StakingView extends Component {
             <div className="row">
               <div className="col-sm-6 p-b-30">
                 <h6>
-                  <FormattedMessage id="Set RSN staked in CPU" />
+                  <FormattedMessage id="Set RIX staked in CPU" />
                 </h6>
                 <div className="input-group input-group-primary">
                   <input
@@ -145,7 +145,7 @@ class StakingView extends Component {
               </div>
               <div className="col-sm-6 p-b-30">
                 <h6>
-                  <FormattedMessage id="Set RSN staked in NET" />
+                  <FormattedMessage id="Set RIX staked in NET" />
                 </h6>
                 <div className="input-group input-group-primary">
                   <input
@@ -165,7 +165,7 @@ class StakingView extends Component {
                   <FormattedMessage id="Error" />
                 </h5>
                 <p className="text-white text-center m-t-20">
-                  <FormattedMessage id="Insufficient available RSN balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network." />
+                  <FormattedMessage id="Insufficient available RIX balance to complete transaction. Or Unable to set staked amount to 0. Doing so would prevent you from performing any transactions on the network." />
                 </p>
               </div>
             )}
@@ -178,7 +178,7 @@ class StakingView extends Component {
                 <div className="card-block">
                   <div className="row">
                     <div className="col-sm-6 b-r-default p-b-30">
-                      <h2 className="f-w-400">{cpu_user} RSN</h2>
+                      <h2 className="f-w-400">{cpu_user} RIX</h2>
                       <p className="text-muted f-w-400">
                         <FormattedMessage id="Total Staked after update for CPU" />
                       </p>
@@ -193,7 +193,7 @@ class StakingView extends Component {
                       </div>
                     </div>
                     <div className="col-sm-6 p-b-30">
-                      <h2 className="f-w-400">{net_user} RSN</h2>
+                      <h2 className="f-w-400">{net_user} RIX</h2>
                       <p className="text-muted f-w-400">
                         <FormattedMessage id="Total Staked after update for NET" />
                       </p>

@@ -16,22 +16,22 @@ class MyAccountView extends Component {
   render() {
     const { accountStore, explorerStore } = this.props
     const cpu = accountStore.accountInfo.total_resources
-      ? Number(accountStore.accountInfo.total_resources.cpu_weight.replace('RSN', ''))
+      ? Number(accountStore.accountInfo.total_resources.cpu_weight.replace('RIX', ''))
       : 0.0
     const net = accountStore.accountInfo.total_resources
-      ? Number(accountStore.accountInfo.total_resources.net_weight.replace('RSN', ''))
+      ? Number(accountStore.accountInfo.total_resources.net_weight.replace('RIX', ''))
       : 0.0
 
     const stakeRsn = cpu + net
     const unstakeRsn = accountStore.accountInfo.core_liquid_balance
-      ? Number(accountStore.accountInfo.core_liquid_balance.replace('RSN', ''))
+      ? Number(accountStore.accountInfo.core_liquid_balance.replace('RIX', ''))
       : 0.0
 
     const refundCpu = accountStore.accountInfo.refund_request
-      ? Number(accountStore.accountInfo.refund_request.cpu_amount.replace('RSN', ''))
+      ? Number(accountStore.accountInfo.refund_request.cpu_amount.replace('RIX', ''))
       : 0.0
     const refundNet = accountStore.accountInfo.refund_request
-      ? Number(accountStore.accountInfo.refund_request.net_amount.replace('RSN', ''))
+      ? Number(accountStore.accountInfo.refund_request.net_amount.replace('RIX', ''))
       : 0.0
 
     const refundRsn = refundCpu + refundNet
@@ -67,9 +67,9 @@ class MyAccountView extends Component {
     //   title: 'Balance',
     //   subTitle: 'Total',
     //   balance: accountStore.rsnBalance ? accountStore.rsnBalance : 0,
-    //   unit: ' RSN',
+    //   unit: ' RIX',
     //   total: totalRsn,
-    //   totalUnit: ' RSN',
+    //   totalUnit: ' RIX',
     //   color: 'bg-c-pink',
     //   icon: 'ti-wallet'
     // }
@@ -78,9 +78,9 @@ class MyAccountView extends Component {
     //   title: 'Staked',
     //   subTitle: 'Total',
     //   balance: stakeRsn.toFixed(4),
-    //   unit: ' RSN',
+    //   unit: ' RIX',
     //   total: totalRsn,
-    //   totalUnit: ' RSN',
+    //   totalUnit: ' RIX',
     //   color: 'bg-c-blue',
     //   icon: 'ti-reload'
     // }
@@ -89,9 +89,9 @@ class MyAccountView extends Component {
     //   title: 'Refund',
     //   subTitle: 'Total',
     //   balance: refundRsn,
-    //   unit: ' RSN',
+    //   unit: ' RIX',
     //   total: totalRsn,
-    //   totalUnit: ' RSN',
+    //   totalUnit: ' RIX',
     //   color: 'bg-c-green',
     //   icon: 'ti-money'
     // }
@@ -111,7 +111,7 @@ class MyAccountView extends Component {
     //   title: 'Cpu Staked',
     //   subTitle: 'Cpu max',
     //   balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.cpu_weight : 0,
-    //   unit: ' RSN',
+    //   unit: ' RIX',
     //   total: accountStore.accountInfo ? accountStore.accountInfo.cpu_limit.max : 0,
     //   totalUnit: ' µs',
     //   color: 'bg-c-green',
@@ -122,7 +122,7 @@ class MyAccountView extends Component {
     //   title: 'Net Staked',
     //   subTitle: 'Net max',
     //   balance: accountStore.accountInfo ? accountStore.accountInfo.total_resources.net_weight : 0,
-    //   unit: ' RSN',
+    //   unit: ' RIX',
     //   total: accountStore.accountInfo ? accountStore.accountInfo.net_limit.max : 0,
     //   totalUnit: ' bytes',
     //   color: 'bg-c-blue',
@@ -141,10 +141,10 @@ class MyAccountView extends Component {
     }
 
     const rsnResource = {
-      title: 'RSN Available',
+      title: 'RIX Available',
       fixed: 4,
       available: unstakeRsn,
-      unit: ' RSN',
+      unit: ' RIX',
       used: stakeRsn,
       max: Number(totalRsn),
       usageRate: usageRsnRate,
@@ -194,7 +194,7 @@ class MyAccountView extends Component {
                           <img
                             src={img_path}
                             className="img-radius"
-                            alt="RSN Logo"
+                            alt="RIX Logo"
                             style={{ width: '100px', height: '100px' }}
                           />
                         </div>
@@ -215,7 +215,7 @@ class MyAccountView extends Component {
                             value={explorerStore.account.total.toFixed(4)}
                             displayType={'text'}
                             thousandSeparator={true}
-                            suffix={' RSN'}
+                            suffix={' RIX'}
                           />
                         </p>
                         <div className="bg-c-blue counter-block p-15" style={{ height: '58px' }}>
@@ -227,7 +227,7 @@ class MyAccountView extends Component {
                                   value={explorerStore.account.unstake.toFixed(4)}
                                   displayType={'text'}
                                   thousandSeparator={true}
-                                  suffix={' RSN'}
+                                  suffix={' RIX'}
                                 />
                               </p>
                             </div>
@@ -238,7 +238,7 @@ class MyAccountView extends Component {
                                   value={explorerStore.account.stake.toFixed(4)}
                                   displayType={'text'}
                                   thousandSeparator={true}
-                                  suffix={' RSN'}
+                                  suffix={' RIX'}
                                 />
                               </p>
                             </div>
@@ -249,7 +249,7 @@ class MyAccountView extends Component {
                                   value={explorerStore.account.refund.toFixed(4)}
                                   displayType={'text'}
                                   thousandSeparator={true}
-                                  suffix={' RSN'}
+                                  suffix={' RIX'}
                                 />
                               </p>
                             </div>
