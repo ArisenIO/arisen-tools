@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl'
 class UsageResourceView extends Component {
   render() {
     let width = this.props.resource.usageRate
-
     if (this.props.resource.usageRate > 0 && this.props.resource.usageRate < 1) {
       width = 1
     } else if (this.props.resource.usageRate > 99 && this.props.resource.usageRate < 100) width = 99
@@ -27,7 +26,7 @@ class UsageResourceView extends Component {
               <div className="card-block text-center">
                 <span className={'d-block f-36 text-c-' + this.props.resource.color}>
                   <NumberFormat
-                    value={this.props.resource.available.toFixed(this.props.resource.fixed)}
+                    value={Number(this.props.resource.available).toFixed(this.props.resource.fixed)}
                     displayType={'text'}
                     thousandSeparator={true}
                     suffix={this.props.resource.unit}
@@ -51,7 +50,7 @@ class UsageResourceView extends Component {
                   />{' '}
                   /{' '}
                   <NumberFormat
-                    value={this.props.resource.max.toFixed(this.props.resource.fixed)}
+                    value={Number(this.props.resource.max).toFixed(this.props.resource.fixed)}
                     displayType={'text'}
                     thousandSeparator={true}
                     suffix={this.props.resource.unit}

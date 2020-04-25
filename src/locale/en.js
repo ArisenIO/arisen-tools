@@ -1,5 +1,6 @@
 export default {
   ArisenTools: 'ArisenTools',
+  'Arisen Block Explorer': 'Arisen Block Explorer',
   Login: 'Login',
   Logout: 'Logout',
   'Irreversible Blocks': 'Irreversible Blocks',
