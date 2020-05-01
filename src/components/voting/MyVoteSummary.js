@@ -23,7 +23,7 @@ class MyVoteSummary extends Component {
         <div className="card-header">
           <div className="card-header-left ">
             <h5>
-              <FormattedMessage id="Summery" />
+              <FormattedMessage id="Summary" />
             </h5>
           </div>
         </div>

@@ -353,7 +353,7 @@
     "invoice":{
       "main":"Factura",
       "invoice":"Factura",
-      "invoice-summery":"Factura Summery",
+      "invoice-summery":"Factura Summary",
       "invoice-list":"Lista de facturas"
     },
     "event-calendar":{

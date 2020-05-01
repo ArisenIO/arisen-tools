@@ -353,7 +353,7 @@
       "invoice":{
         "main":"Invoice",
         "invoice":"Invoice",
-        "invoice-summery":"Invoice Summery",
+        "invoice-summery":"Invoice Summary",
         "invoice-list":"Invoice List"
       },
       "event-calendar":{

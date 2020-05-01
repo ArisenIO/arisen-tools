@@ -227,7 +227,7 @@ export default {
   'Cpu max': 'Cpu max',
   'Net max': 'Net max',
   'Ram usage': 'Ram usage',
-  Summery: 'Summery',
+  Summary: 'Summary',
   'Voting Action': 'Voting Action',
   'Your votes': 'Your votes',
   'Create Key': 'Create Key',

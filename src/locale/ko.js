@@ -226,7 +226,7 @@ export default {
   'Cpu max': 'Cpu 최대치',
   'Net max': 'Net 최대치',
   'Ram usage': '램 사용량',
-  Summery: '요약',
+  Summary: '요약',
   'Voting Action': '투표 하기',
   'Your votes': '투표수',
   'Create Key': '키 생성',
