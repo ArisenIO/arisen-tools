@@ -29,7 +29,7 @@ class BpListView extends Component {
           <div className="card-header ">
             <div className="card-header-left ">
               <h5>
-                <FormattedMessage id="BP Top 30" />
+                <FormattedMessage id="Governance Election - Top 30" />
               </h5>
             </div>
           </div>
