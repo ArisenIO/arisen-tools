@@ -4,7 +4,7 @@ import LoginView from '../components/LoginView'
 import { Link, withRouter } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl'
 import LocaleSelectView from '../components/LocaleSelectView'
-
+import logo from '../assets/images/logo.png'
 class Header extends Component {
   render() {
     return (
@@ -23,7 +23,7 @@ class Header extends Component {
             <header>
               <Link to="/">
                 <h5>
-                  <img className="logo-arisen" alt='log-arisen' src="/assets/images/logo.png"/>
+                  <img className="logo-arisen" alt='log-arisen' src= {logo}/>
                   <FormattedMessage id="LIVE" />
                 </h5>
               </Link>
