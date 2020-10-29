@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import {  withRouter } from 'react-router-dom'
 import '../styles/layout/Nav.scss'
-import { FormattedMessage } from 'react-intl'
+// import { FormattedMessage } from 'react-intl'
 import { inject, observer } from '../../node_modules/mobx-react'
 
 @inject('accountStore')
@@ -27,9 +27,9 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className="pcoded-navbar">
-        <div className="pcoded-inner-navbar main-menu">
-          <div className="pcoded-navigation-label">
+      <nav className="">
+        <div className="">
+          {/* <div className="pcoded-navigation-label">
           </div>
 
           <ul className="pcoded-item pcoded-left-item">
@@ -360,7 +360,7 @@ class Nav extends Component {
                 </li>
               </ul>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </nav>
     )
