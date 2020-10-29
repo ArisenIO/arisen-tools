@@ -8249,7 +8249,7 @@ table tbody .border-bottom-info td {
   margin-left: 235px;
 }
 .pcoded[theme-layout="vertical"][vertical-placement="left"][vertical-nav-type="expanded"][vertical-effect="shrink"] .pcoded-content {
-  margin-left: 235px;
+  /* margin-left: 235px; */
 }
 .pcoded[theme-layout="vertical"][vertical-placement="right"][vertical-nav-type="expanded"][vertical-effect="shrink"] .pcoded-header.iscollapsed .pcoded-right-header,
 .pcoded[theme-layout="vertical"][vertical-placement="right"][vertical-nav-type="expanded"][vertical-effect="shrink"] .pcoded-header .pcoded-right-header {
