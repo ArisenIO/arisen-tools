@@ -23,8 +23,8 @@ class Header extends Component {
             <header>
               <Link to="/">
                 <h5>
-                  <img className="logo-arisen" alt='log-arisen' src="/assets/images/arisenLogo.png"/>
-                  <FormattedMessage id="ArisenTools" />
+                  <img className="logo-arisen" alt='log-arisen' src="/assets/images/logo.png"/>
+                  <FormattedMessage id="LIVE" />
                 </h5>
               </Link>
             </header>

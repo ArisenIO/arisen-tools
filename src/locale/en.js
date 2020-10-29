@@ -1,5 +1,5 @@
 export default {
-  ArisenTools: 'ArisenTools',
+  LIVE: 'LIVE',
   'Arisen Block Explorer': 'Arisen Block Explorer',
   Login: 'Login',
   Logout: 'Logout',
