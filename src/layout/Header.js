@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/layout/Header.scss'
-import LoginView from '../components/LoginView'
+// import LoginView from '../components/LoginView'
 import { Link, withRouter } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl'
 import LocaleSelectView from '../components/LocaleSelectView'
@@ -17,9 +17,9 @@ class Header extends Component {
         </div> */}
         <div className="navbar-wrapper">
           <div className="navbar-logo">
-            <a className="mobile-menu" id="mobile-collapse" href="#!">
+            {/* <a className="mobile-menu" id="mobile-collapse" href="#!">
               <i className="ti-menu" />
-            </a>
+            </a> */}
             <header>
               <Link to="/">
                 <h5>
@@ -43,9 +43,9 @@ class Header extends Component {
               <li className="user-profile header-notification">
                 <LocaleSelectView />
               </li>
-              <li className="user-profile header-notification">
+              {/* <li className="user-profile header-notification">
                 <LoginView />
-              </li>
+              </li> */}
 
               <li>
                 <a
