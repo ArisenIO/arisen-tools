@@ -1,6 +1,6 @@
-# Arisen.Tools
+# ARISEN LIVE
 
-This project is to utilize Arisen's blockchain easily.
+Live ARISEN Blockchain Explorer.
 
 ## Dashboard
 

@@ -1,7 +1,7 @@
 {
   "name": "arisen-tools",
   "version": "0.1.0",
-  "homepage": "https://arisen.tools",
+  "homepage": "https://live.arisen.network/",
   "dependencies": {
     "@vx/axis": "^0.0.170",
     "@vx/gradient": "^0.0.165",
